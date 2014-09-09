@@ -8,7 +8,7 @@ module Reek
     # A Boolean parameter effectively permits a method's caller
     # to decide which execution path to take. The
     # offending parameter is a kind of Control Couple.
-    # 
+    #
     # Currently Reek can only detect a Boolean parameter when it has a
     # default initializer.
     #

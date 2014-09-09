@@ -145,7 +145,7 @@ module Reek
 
     #
     # Saves the report as a HTML file
-    # 
+    #
     class HtmlReport < Report
       require 'erb'
       TEMPLATE = File.read(File.expand_path('../../../../assets/html_output.html.erb', __FILE__))

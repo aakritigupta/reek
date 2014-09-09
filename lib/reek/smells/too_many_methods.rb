@@ -7,7 +7,7 @@ module Reek
     #
     # A Large Class is a class or module that has a large number of
     # instance variables, methods or lines of code.
-    # 
+    #
     # +TooManyMethods+ reports classes having more than a configurable number
     # of methods. The method count includes public, protected and private
     # methods, and excludes methods inherited from superclasses or included

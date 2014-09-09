@@ -124,4 +124,3 @@ describe ObjectRefs do
     end
   end
 end
-

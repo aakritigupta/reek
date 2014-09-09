@@ -16,4 +16,3 @@ describe SexpFormatter do
     end
   end
 end
-

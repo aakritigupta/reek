@@ -7,7 +7,7 @@ module Reek
     #
     # A Large Class is a class or module that has a large number of
     # instance variables, methods or lines of code.
-    # 
+    #
     # +TooManyInstanceVariables' reports classes having more than a
     # configurable number of instance variables.
     #

@@ -11,4 +11,3 @@ module Reek
     end
   end
 end
-

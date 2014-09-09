@@ -7,7 +7,7 @@ module Reek
     #
     # An Uncommunicative Name is a name that doesn't communicate its intent
     # well enough.
-    # 
+    #
     # Poor names make it hard for the reader to build a mental picture
     # of what's going on in the code. They can also be mis-interpreted;
     # and they hurt the flow of reading, because the reader must slow

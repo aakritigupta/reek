@@ -43,12 +43,12 @@ module Reek
 
         def smelly
           @nodes.select { |call|
-            nil_chk?(call) 
+            nil_chk?(call)
           }
         end
 
         def nil_chk?(call)
-          nilQ_use?(call) || eq_nil_use?(call) 
+          nilQ_use?(call) || eq_nil_use?(call)
         end
 
         def nilQ_use?(call)

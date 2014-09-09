@@ -43,7 +43,7 @@ EOS
     src = <<EOS
 #
 #
-#  
+#
 class #{@bad_module_name}; end
 EOS
     ctx = CodeContext.new(nil, src.to_reek_source.syntax_tree)

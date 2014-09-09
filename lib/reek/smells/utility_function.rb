@@ -5,12 +5,12 @@ require 'reek/source/reference_collector'
 module Reek
   module Smells
 
-    # 
+    #
     # A Utility Function is any instance method that has no
     # dependency on the state of the instance.
-    # 
+    #
     # Currently +UtilityFunction+ will warn about any method that:
-    # 
+    #
     # * is non-empty, and
     # * does not override an inherited method, and
     # * calls at least one method on another object, and
