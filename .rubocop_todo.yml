@@ -184,12 +184,6 @@ Style/FormatString:
 Style/GuardClause:
   Enabled: false
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: SupportedStyles.
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-
 # Offense count: 2
 # Configuration parameters: MaxLineLength.
 Style/IfUnlessModifier:

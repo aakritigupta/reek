@@ -71,7 +71,7 @@ describe ObjectRefs do
     end
 
     it 'should report self among the max' do
-      expect(@refs.max_keys).to eq({ :self => 4})
+      expect(@refs.max_keys).to eq({ self: 4})
     end
 
     it 'should report self as the max' do
