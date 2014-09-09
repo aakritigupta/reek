@@ -42,7 +42,7 @@ module Reek
         end
 
         def smelly
-          @nodes.select{ |call|
+          @nodes.select { |call|
             nil_chk?(call) 
           }
         end
@@ -75,7 +75,7 @@ module Reek
         end
 
         def smelly
-          @nodes.select{ |when_node|
+          @nodes.select { |when_node|
             nil_chk?(when_node)
           }
         end

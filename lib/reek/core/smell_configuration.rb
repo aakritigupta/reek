@@ -54,7 +54,7 @@ module Reek
 
       # Find any overrides that match the supplied context
       def for_context(context)
-        contexts = @hash.keys.select {|ckey| context.matches?([ckey])}
+        contexts = @hash.keys.select { |ckey| context.matches?([ckey]) }
         contexts.map { |exc| @hash[exc] }
       end
     end

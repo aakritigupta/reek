@@ -44,7 +44,7 @@ module Reek
       # in the given module.
       #
       def class_variables_in(ast)
-        result = Hash.new {|hash,key| hash[key] = []}
+        result = Hash.new { |hash, key| hash[key] = [] }
         collector = proc do |cvar_node|
           result[cvar_node.name].push(cvar_node.line)
         end

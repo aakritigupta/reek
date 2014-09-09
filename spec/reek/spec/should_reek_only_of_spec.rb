@@ -10,7 +10,7 @@ describe ShouldReekOnlyOf do
     @expected_context_name = 'SmellyClass#big_method'
     @matcher = ShouldReekOnlyOf.new(@expected_smell_class, [/#{@expected_context_name}/])
     @examiner = double('examiner').as_null_object
-    expect(@examiner).to receive(:smells) {smells}
+    expect(@examiner).to receive(:smells) { smells }
     @match = @matcher.matches_examiner?(@examiner)
   end
 

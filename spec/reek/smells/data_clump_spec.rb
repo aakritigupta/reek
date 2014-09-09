@@ -46,7 +46,7 @@ EOS
       expect(@smells[0].smell[DataClump::METHODS_KEY]).to eq(['first', 'second', 'third'])
     end
     it 'reports the declaration line numbers' do
-      expect(@smells[0].lines).to eq([2,3,4])
+      expect(@smells[0].lines).to eq([2, 3, 4])
     end
     it 'reports the correct smell class' do
       expect(@smells[0].smell_class).to eq(DataClump::SMELL_CLASS)

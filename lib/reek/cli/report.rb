@@ -90,7 +90,7 @@ module Reek
       end
 
       def sort_examiners
-        @examiners.sort! {|first, second| second.smells_count <=> first.smells_count } if @sort_by_issue_count
+        @examiners.sort! { |first, second| second.smells_count <=> first.smells_count } if @sort_by_issue_count
       end
 
       def display_summary

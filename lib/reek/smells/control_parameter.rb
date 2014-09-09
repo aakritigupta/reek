@@ -98,7 +98,7 @@ module Reek
         end
 
         def control_parameters
-          result = Hash.new {|hash, key| hash[key] = FoundControlParameter.new(key)}
+          result = Hash.new { |hash, key| hash[key] = FoundControlParameter.new(key) }
           potential_parameters.each do |param|
             matches = find_matches(param)
             result[param].record(matches) if matches.any?
@@ -111,13 +111,13 @@ module Reek
         # Returns parameters that aren't used outside of a conditional statements and that
         # could be good candidates for being a control parameter.
         def potential_parameters
-          @context.exp.parameter_names.select {|param| !used_outside_conditional?(param)}
+          @context.exp.parameter_names.select { |param| !used_outside_conditional?(param) }
         end
 
         # Returns wether the parameter is used outside of the conditional statement.
         def used_outside_conditional?(param)
           nodes = @context.exp.each_node(:lvar, [:if, :case, :and, :or, :args])
-          nodes.any? {|node| node.value == param}
+          nodes.any? { |node| node.value == param }
         end
 
         # Find the use of the param that match the definition of a control parameter.
@@ -126,7 +126,7 @@ module Reek
           [:if, :case, :and, :or].each do |keyword|
             @context.local_nodes(keyword).each do |node|
               return [] if used_besides_in_condition?(node, param)
-              node.each_node(:lvar, []) {|inner| matches.push(inner) if inner.value == param}
+              node.each_node(:lvar, []) { |inner| matches.push(inner) if inner.value == param }
             end
           end
           matches
@@ -136,10 +136,10 @@ module Reek
         # conditional statement.
         def used_besides_in_condition?(node, param)
           times_in_conditional, times_total = 0, 0
-          node.each_node(:lvar, [:if, :case]) {|lvar| times_total +=1 if lvar.value == param}
+          node.each_node(:lvar, [:if, :case]) { |lvar| times_total += 1 if lvar.value == param }
           if node.condition
             times_in_conditional += 1 if node.condition[VALUE_POSITION] == param
-            times_in_conditional += node.condition.count {|inner| inner.class == Sexp && inner[VALUE_POSITION] == param}
+            times_in_conditional += node.condition.count { |inner| inner.class == Sexp && inner[VALUE_POSITION] == param }
           end
           return times_total > times_in_conditional
         end

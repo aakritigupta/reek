@@ -33,7 +33,7 @@ EOS
       expect(@warning.smell[DuplicateMethodCall::CALL_KEY]).to eq('other[@thing]')
     end
     it 'reports the correct lines' do
-      expect(@warning.lines).to eq([2,4])
+      expect(@warning.lines).to eq([2, 4])
     end
   end
 
@@ -168,7 +168,7 @@ EOS
 
   context "allowing calls to some methods" do
     before :each do
-      @config = {DuplicateMethodCall::ALLOW_CALLS_KEY => ['@some.thing',/puts/]}
+      @config = {DuplicateMethodCall::ALLOW_CALLS_KEY => ['@some.thing', /puts/]}
     end
     it 'does not report calls to some methods' do
       src = 'def double_some_thing() @some.thing + @some.thing end'

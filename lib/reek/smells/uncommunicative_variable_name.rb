@@ -67,14 +67,14 @@ module Reek
       def is_bad_name?(name, ctx)
         var = name.to_s.gsub(/^[@\*\&]*/, '')
         return false if @accept_names.include?(var)
-        @reject_names.detect {|patt| patt === var}
+        @reject_names.detect { |patt| patt === var }
       end
 
       def variable_names(exp)
-        result = Hash.new {|hash, key| hash[key] = []}
+        result = Hash.new { |hash, key| hash[key] = [] }
         find_assignment_variable_names(exp, result)
         find_block_argument_variable_names(exp, result)
-        result.to_a.sort_by {|name, _| name.to_s}
+        result.to_a.sort_by { |name, _| name.to_s }
       end
 
       def find_assignment_variable_names(exp, accumulator)
@@ -85,7 +85,7 @@ module Reek
             assignment_nodes += exp.each_node(:iasgn, [:class, :module])
         end
 
-        assignment_nodes.each {|asgn| accumulator[asgn[1]].push(asgn.line) }
+        assignment_nodes.each { |asgn| accumulator[asgn[1]].push(asgn.line) }
       end
 
       def find_block_argument_variable_names(exp, accumulator)

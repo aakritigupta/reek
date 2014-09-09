@@ -10,7 +10,7 @@ module Reek
       CONFIG_REGEX = /:reek:(\w+)(:\s*\{.*?\})?/
 
       def initialize(text)
-        @config =  Hash.new { |hash,key| hash[key] = {} }
+        @config =  Hash.new { |hash, key| hash[key] = {} }
         @text = text.gsub(CONFIG_REGEX) do
           add_to_config($1, $2)
           ''

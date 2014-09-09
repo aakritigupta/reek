@@ -33,7 +33,7 @@ module Reek
         SmellWarning.new(
           SMELL_CLASS,
           method_ctx.full_name,
-          [ method_ctx.exp.line ],
+          [method_ctx.exp.line],
           "has unused parameter '#{param_name}'",
           @source,
           SMELL_SUBCLASS,

@@ -86,7 +86,7 @@ module Reek
         end
 
         def lines
-          @occurences.map {|exp| exp.line}
+          @occurences.map { |exp| exp.line }
         end
       end
 
@@ -101,14 +101,14 @@ module Reek
         end
 
         def calls
-          result = Hash.new {|hash,key| hash[key] = FoundCall.new(key)}
+          result = Hash.new { |hash, key| hash[key] = FoundCall.new(key) }
           collect_calls(result)
           collect_assignments(result)
-          result.values.sort_by {|found_call| found_call.call}
+          result.values.sort_by { |found_call| found_call.call }
         end
 
         def smelly_calls
-          calls.select {|found_call| smelly_call? found_call }
+          calls.select { |found_call| smelly_call? found_call }
         end
 
         private

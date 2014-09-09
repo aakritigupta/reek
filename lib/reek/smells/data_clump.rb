@@ -65,19 +65,19 @@ module Reek
         @min_clump_size = value(MIN_CLUMP_SIZE_KEY, ctx, DEFAULT_MIN_CLUMP_SIZE)
         MethodGroup.new(ctx, @min_clump_size, @max_copies).clumps.map do |clump, methods|
           SmellWarning.new(SMELL_CLASS, ctx.full_name,
-                           methods.map {|meth| meth.line},
+                           methods.map { |meth| meth.line },
                            "takes parameters #{DataClump.print_clump(clump)} to #{methods.length} methods",
                            @source, SMELL_SUBCLASS, {
-                             PARAMETERS_KEY => clump.map {|name| name.to_s},
+                             PARAMETERS_KEY => clump.map { |name| name.to_s },
                              OCCURRENCES_KEY => methods.length,
-                             METHODS_KEY => methods.map {|meth| meth.name}
+                             METHODS_KEY => methods.map { |meth| meth.name }
                            })
         end
       end
 
       # @private
       def self.print_clump(clump)
-        "[#{clump.map {|name| name.to_s}.join(', ')}]"
+        "[#{clump.map { |name| name.to_s }.join(', ')}]"
       end
     end
   end
@@ -121,7 +121,7 @@ module Reek
   class CandidateMethod
     def initialize(defn_node)
       @defn = defn_node
-      @params = defn_node.arg_names.clone.sort {|first, second| first.to_s <=> second.to_s}
+      @params = defn_node.arg_names.clone.sort { |first, second| first.to_s <=> second.to_s }
     end
 
     def arg_names

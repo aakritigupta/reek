@@ -46,7 +46,7 @@ describe CodeComment do
     end
     it 'parses multiple hashed options' do
       config = CodeComment.new("# :reek:Duplication: { enabled: false }\n:reek:nested_iterators: { enabled: true }").config
-      expect(config).to include('Duplication','NestedIterators')
+      expect(config).to include('Duplication', 'NestedIterators')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
       expect(config['NestedIterators']).to include('enabled')
@@ -54,7 +54,7 @@ describe CodeComment do
     end
     it 'parses multiple hashed options on the same line' do
       config = CodeComment.new("# :reek:Duplication: { enabled: false } and :reek:nested_iterators: { enabled: true }").config
-      expect(config).to include('Duplication','NestedIterators')
+      expect(config).to include('Duplication', 'NestedIterators')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
       expect(config['NestedIterators']).to include('enabled')
@@ -62,7 +62,7 @@ describe CodeComment do
     end
     it 'parses multiple unhashed options on the same line' do
       config = CodeComment.new("# :reek:Duplication and :reek:nested_iterators").config
-      expect(config).to include('Duplication','NestedIterators')
+      expect(config).to include('Duplication', 'NestedIterators')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
       expect(config['NestedIterators']).to include('enabled')

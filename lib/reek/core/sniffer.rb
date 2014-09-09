@@ -10,12 +10,12 @@ module Reek
     #
     class Sniffer
 
-      def initialize(src, extra_config_files = [], smell_repository=Core::SmellRepository.new(src.desc))
+      def initialize(src, extra_config_files = [], smell_repository = Core::SmellRepository.new(src.desc))
         @smell_repository = smell_repository
         @source = src
 
         config_files = extra_config_files + @source.relevant_config_files
-        config_files.each{ |cf| Reek::Source::ConfigFile.new(cf).configure(@smell_repository) }
+        config_files.each { |cf| Reek::Source::ConfigFile.new(cf).configure(@smell_repository) }
       end
 
       def report_on(listener)

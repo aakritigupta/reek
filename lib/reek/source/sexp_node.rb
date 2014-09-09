@@ -29,7 +29,7 @@ module Reek
           look_for(type, ignoring, &blk)
         else
           result = []
-          look_for(type, ignoring) {|exp| result << exp}
+          look_for(type, ignoring) { |exp| result << exp }
           result
         end
       end

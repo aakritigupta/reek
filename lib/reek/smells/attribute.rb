@@ -55,7 +55,7 @@ module Reek
         attr_defn_methods = [:attr, :attr_reader, :attr_writer, :attr_accessor]
         module_ctx.local_nodes(:call) do |call_node|
           if attr_defn_methods.include?(call_node.method_name)
-            call_node.arg_names.each {|arg| result << [arg, call_node.line] }
+            call_node.arg_names.each { |arg| result << [arg, call_node.line] }
           end
         end
         result

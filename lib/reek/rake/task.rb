@@ -111,7 +111,7 @@ module Reek
       def cmd_words
         [Task.ruby_exe] +
             ruby_options +
-            [ %Q|"#{Task.reek_script}"| ] +
+            [%Q|"#{Task.reek_script}"|] +
             [sort_option] +
             config_file_list.collect { |fn| ['-c', %["#{fn}"]] }.flatten +
             source_file_list.collect { |fn| %["#{fn}"] }

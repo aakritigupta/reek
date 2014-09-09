@@ -60,7 +60,7 @@ module Reek
       def find_deepest_iterator(ctx)
         @ignore_iterators = value(IGNORE_ITERATORS_KEY, ctx, DEFAULT_IGNORE_ITERATORS)
 
-        find_iters(ctx.exp, 1).sort_by {|item| item[1]}.last
+        find_iters(ctx.exp, 1).sort_by { |item| item[1] }.last
       end
 
       def find_iters(exp, depth)

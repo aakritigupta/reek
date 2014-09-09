@@ -8,11 +8,11 @@ module Reek
     #
     class SourceLocator
       def initialize(paths)
-        @paths = paths.map {|path| path.chomp('/') }
+        @paths = paths.map { |path| path.chomp('/') }
       end
 
       def all_sources
-        valid_paths.map {|path| File.new(path).to_reek_source }
+        valid_paths.map { |path| File.new(path).to_reek_source }
       end
 
     private

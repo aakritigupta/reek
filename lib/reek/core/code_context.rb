@@ -35,7 +35,7 @@ module Reek
 
       def matches?(candidates)
         my_fq_name = full_name
-        candidates.any? {|str| /#{str}/ === my_fq_name }
+        candidates.any? { |str| /#{str}/ === my_fq_name }
       end
 
       #

@@ -56,7 +56,7 @@ describe UncommunicativeVariableName do
       expect(smells.length).to eq(1)
       expect(smells[0].subclass).to eq(UncommunicativeVariableName::SMELL_SUBCLASS)
       expect(smells[0].smell[UncommunicativeVariableName::VARIABLE_NAME_KEY]).to eq('x')
-      expect(smells[0].lines).to eq([1,1])
+      expect(smells[0].lines).to eq([1, 1])
     end
     it 'reports a bad name inside a block' do
       src = 'def clean(text) text.each { q2 = 3 } end'
@@ -168,7 +168,7 @@ EOS
 
     it 'reports the correct values' do
       expect(@warning.smell['variable_name']).to eq('x2')
-      expect(@warning.lines).to eq([3,5])
+      expect(@warning.lines).to eq([3, 5])
     end
   end
 

@@ -68,7 +68,7 @@ module Reek
       def is_bad_name?(name)
         var = name.to_s.gsub(/^[@\*\&]*/, '')
         return false if var == '*' or @accept_names.include?(var)
-        @reject_names.detect {|patt| patt === var}
+        @reject_names.detect { |patt| patt === var }
       end
     end
   end

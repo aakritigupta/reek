@@ -65,13 +65,13 @@ module Reek
       # occurs. Ignores nested classes and modules.
       #
       def conditional_counts(sexp)
-        result = Hash.new {|hash, key| hash[key] = []}
+        result = Hash.new { |hash, key| hash[key] = [] }
         collector = proc { |node|
           condition = node.condition
           next if condition.nil? or condition == s(:call, nil, :block_given?)
           result[condition].push(condition.line)
         }
-        [:if, :case].each {|stmt| sexp.local_nodes(stmt, &collector) }
+        [:if, :case].each { |stmt| sexp.local_nodes(stmt, &collector) }
         result
       end
     end

@@ -32,11 +32,11 @@ module Reek
       end
 
       module AndNode
-        def condition() self[1..2].tap {|node| node.extend SexpNode } end
+        def condition() self[1..2].tap { |node| node.extend SexpNode } end
       end
 
       module OrNode
-        def condition() self[1..2].tap {|node| node.extend SexpNode } end
+        def condition() self[1..2].tap { |node| node.extend SexpNode } end
       end
 
       module AttrasgnNode
@@ -52,7 +52,7 @@ module Reek
         def method_name() self[2] end
         def args() self[3..-1] end
         def arg_names
-          args.map {|arg| arg[1]}
+          args.map { |arg| arg[1] }
         end
       end
 
@@ -69,7 +69,7 @@ module Reek
 
       module MethodNode
         def arguments
-          @arguments ||= parameters.reject {|param| param.block? }
+          @arguments ||= parameters.reject { |param| param.block? }
         end
 
         def arg_names
@@ -178,7 +178,7 @@ module Reek
       module YieldNode
         def args() self[1..-1] end
         def arg_names
-          args.map {|arg| arg[1]}
+          args.map { |arg| arg[1] }
         end
       end
     end

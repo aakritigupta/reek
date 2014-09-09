@@ -38,7 +38,7 @@ describe NilCheck do
     end
 
     it 'should report twice when scope uses == nil and === nil' do
-      src= <<-eos
+      src = <<-eos
       def chk_eq_nil(para)
         para == nil
         para === nil

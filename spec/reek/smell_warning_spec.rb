@@ -115,7 +115,7 @@ describe SmellWarning do
         expect(@yaml).to match(/source:\s*#{@source}/)
       end
       it 'includes the parameters' do
-        @parameters.each do |key,value|
+        @parameters.each do |key, value|
           expect(@yaml).to match(/#{key}:\s*#{value}/)
         end
       end
