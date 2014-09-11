@@ -23,7 +23,7 @@ module Reek
       @smell = {
         CLASS_KEY => class_name,
         SUBCLASS_KEY => subclass_name,
-        MESSAGE_KEY => message,
+        MESSAGE_KEY => message
       }
       @smell.merge!(parameters)
       @status = {
