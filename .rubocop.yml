@@ -11,4 +11,8 @@ Style/WordArray:
 Style/SingleLineMethods:
   Enabled: false
 
+# Always use raise to signal exceptions
+Style/SignalException:
+  EnforcedStyle: only_raise
+
 inherit_from: .rubocop_todo.yml
