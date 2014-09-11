@@ -54,7 +54,7 @@ module Reek
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
           "has at least #{actual} methods",
           @source, SMELL_SUBCLASS,
-          {METHOD_COUNT_KEY => actual})
+          { METHOD_COUNT_KEY => actual })
         [smell]
       end
     end

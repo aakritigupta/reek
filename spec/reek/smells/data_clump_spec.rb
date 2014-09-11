@@ -64,8 +64,8 @@ EOS
   def tri(pa, pb) pa - pb + @fred; end
 end
 EOS
-    expect(src).to smell_of(DataClump, {DataClump::OCCURRENCES_KEY => 3,
-      DataClump::PARAMETERS_KEY => ['pa', 'pb']})
+    expect(src).to smell_of(DataClump, { DataClump::OCCURRENCES_KEY => 3,
+      DataClump::PARAMETERS_KEY => ['pa', 'pb'] })
   end
 
   it 'reports 3 identical parameter sets' do
@@ -76,8 +76,8 @@ EOS
   def third(pa, pb, pc) pa - pb + @fred; end
 end
 EOS
-    expect(src).to smell_of(DataClump, {DataClump::OCCURRENCES_KEY => 3,
-      DataClump::PARAMETERS_KEY => ['pa', 'pb', 'pc']})
+    expect(src).to smell_of(DataClump, { DataClump::OCCURRENCES_KEY => 3,
+      DataClump::PARAMETERS_KEY => ['pa', 'pb', 'pc'] })
   end
 
   it 'reports re-ordered identical parameter sets' do
@@ -88,8 +88,8 @@ EOS
   def third(pa, pb, pc) pa - pb + @fred; end
 end
 EOS
-    expect(src).to smell_of(DataClump, {DataClump::OCCURRENCES_KEY => 3,
-      DataClump::PARAMETERS_KEY => ['pa', 'pb', 'pc']})
+    expect(src).to smell_of(DataClump, { DataClump::OCCURRENCES_KEY => 3,
+      DataClump::PARAMETERS_KEY => ['pa', 'pb', 'pc'] })
   end
 
   it 'counts only identical parameter sets' do

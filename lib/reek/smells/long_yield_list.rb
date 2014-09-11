@@ -42,7 +42,7 @@ module Reek
           num_params = yield_node.args.length
           SmellWarning.new(SMELL_CLASS, method_ctx.full_name, [yield_node.line],
                            "yields #{num_params} parameters",
-                           @source, SMELL_SUBCLASS, {PARAMETER_COUNT_KEY => num_params})
+                           @source, SMELL_SUBCLASS, { PARAMETER_COUNT_KEY => num_params })
         end
       end
     end

@@ -43,7 +43,7 @@ module Reek
           smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [line],
             "declares the attribute #{attr}",
             @source, SMELL_SUBCLASS,
-            {ATTRIBUTE_KEY => attr.to_s})
+            { ATTRIBUTE_KEY => attr.to_s })
           smell
         end
       end

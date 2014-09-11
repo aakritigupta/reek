@@ -59,7 +59,7 @@ module Reek
           SmellWarning.new(SMELL_CLASS, ctx.full_name, control_parameter.lines,
                            control_parameter.smell_message,
                            @source, SMELL_SUBCLASS,
-                           {PARAMETER_KEY => control_parameter.name})
+                           { PARAMETER_KEY => control_parameter.name })
         end
       end
 

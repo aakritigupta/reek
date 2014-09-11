@@ -32,7 +32,7 @@ module Reek
         super.merge(
           MAX_ALLOWED_PARAMS_KEY => DEFAULT_MAX_ALLOWED_PARAMS,
           Core::SmellConfiguration::OVERRIDES_KEY => {
-            "initialize" => {MAX_ALLOWED_PARAMS_KEY => 5}
+            "initialize" => { MAX_ALLOWED_PARAMS_KEY => 5 }
           }
         )
       end
@@ -49,7 +49,7 @@ module Reek
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
           "has #{num_params} parameters",
           @source, SMELL_SUBCLASS,
-          {PARAMETER_COUNT_KEY => num_params})
+          { PARAMETER_COUNT_KEY => num_params })
         [smell]
       end
     end

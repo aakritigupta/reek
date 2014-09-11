@@ -52,8 +52,8 @@ EOS
     end
     it 'should report nested calls' do
       src = 'def double_thing() @other.thing.foo + @other.thing.foo end'
-      expect(src).to smell_of(DuplicateMethodCall, {DuplicateMethodCall::CALL_KEY => '@other.thing'},
-                                       {DuplicateMethodCall::CALL_KEY => '@other.thing.foo'})
+      expect(src).to smell_of(DuplicateMethodCall, { DuplicateMethodCall::CALL_KEY => '@other.thing' },
+                                       { DuplicateMethodCall::CALL_KEY => '@other.thing.foo' })
     end
     it 'should ignore calls to new' do
       src = 'def double_thing() @other.new + @other.new end'
@@ -150,7 +150,7 @@ EOS
 
   context "allowing up to 3 calls" do
     before :each do
-      @config = {DuplicateMethodCall::MAX_ALLOWED_CALLS_KEY => 3}
+      @config = { DuplicateMethodCall::MAX_ALLOWED_CALLS_KEY => 3 }
     end
     it 'does not report double calls' do
       src = 'def double_thing() @other.thing + @other.thing end'
@@ -162,13 +162,13 @@ EOS
     end
     it 'reports quadruple calls' do
       src = 'def double_thing() @other.thing + @other.thing + @other.thing + @other.thing end'
-      expect(src).to smell_of(DuplicateMethodCall, {DuplicateMethodCall::CALL_KEY => '@other.thing', DuplicateMethodCall::OCCURRENCES_KEY => 4}).with_config(@config)
+      expect(src).to smell_of(DuplicateMethodCall, { DuplicateMethodCall::CALL_KEY => '@other.thing', DuplicateMethodCall::OCCURRENCES_KEY => 4 }).with_config(@config)
     end
   end
 
   context "allowing calls to some methods" do
     before :each do
-      @config = {DuplicateMethodCall::ALLOW_CALLS_KEY => ['@some.thing', /puts/]}
+      @config = { DuplicateMethodCall::ALLOW_CALLS_KEY => ['@some.thing', /puts/] }
     end
     it 'does not report calls to some methods' do
       src = 'def double_some_thing() @some.thing + @some.thing end'
@@ -176,11 +176,11 @@ EOS
     end
     it 'reports calls to other methods' do
       src = 'def double_other_thing() @other.thing + @other.thing end'
-      expect(src).to smell_of(DuplicateMethodCall, {DuplicateMethodCall::CALL_KEY => '@other.thing'}).with_config(@config)
+      expect(src).to smell_of(DuplicateMethodCall, { DuplicateMethodCall::CALL_KEY => '@other.thing' }).with_config(@config)
     end
     it 'does not report calls to methods specifed with a regular expression' do
       src = 'def double_puts() puts @other.thing; puts @other.thing end'
-      expect(src).to smell_of(DuplicateMethodCall, {DuplicateMethodCall::CALL_KEY => '@other.thing'}).with_config(@config)
+      expect(src).to smell_of(DuplicateMethodCall, { DuplicateMethodCall::CALL_KEY => '@other.thing' }).with_config(@config)
     end
   end
 end

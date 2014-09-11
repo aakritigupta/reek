@@ -34,7 +34,7 @@ module Reek
           smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, lines,
             "declares the class variable #{attr_name.to_s}",
             @source, SMELL_SUBCLASS,
-            {VARIABLE_KEY => attr_name.to_s})
+            { VARIABLE_KEY => attr_name.to_s })
           smell
         end
       end

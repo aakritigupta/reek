@@ -100,7 +100,7 @@ describe SmellWarning do
       before :each do
         @source = 'a/ruby/source/file.rb'
         @subclass = 'TooManyParties'
-        @parameters = {'one' => 34, 'two' => 'second'}
+        @parameters = { 'one' => 34, 'two' => 'second' }
         @warning = SmellWarning.new(@class, @context_name, @lines, @message,
           @source, @subclass, @parameters)
         @yaml = @warning.to_yaml

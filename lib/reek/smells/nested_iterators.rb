@@ -47,7 +47,7 @@ module Reek
           smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [exp.line],
             "contains iterators nested #{depth} deep",
             @source, SMELL_SUBCLASS,
-            {NESTING_DEPTH_KEY => depth})
+            { NESTING_DEPTH_KEY => depth })
           [smell]
         else
           []

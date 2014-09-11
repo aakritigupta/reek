@@ -61,7 +61,7 @@ module Reek
         end.map do |name|
           SmellWarning.new(SMELL_CLASS, ctx.full_name, [context_expression.line],
                            "has the parameter name '#{name}'",
-                           @source, SMELL_SUBCLASS, {PARAMETER_NAME_KEY => name.to_s})
+                           @source, SMELL_SUBCLASS, { PARAMETER_NAME_KEY => name.to_s })
         end
       end
 

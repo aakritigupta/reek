@@ -34,7 +34,7 @@ describe NilCheck do
       end
       eos
       expect(src).to smell_of(NilCheck,
-                          {NilCheck => nil}, {NilCheck => nil})
+                          { NilCheck => nil }, { NilCheck => nil })
     end
 
     it 'should report twice when scope uses == nil and === nil' do
@@ -45,7 +45,7 @@ describe NilCheck do
       end
       eos
       expect(src).to smell_of(NilCheck,
-                          {NilCheck => nil}, {NilCheck => nil})
+                          { NilCheck => nil }, { NilCheck => nil })
     end
 
     it 'should report when scope uses nil ==' do
@@ -66,7 +66,7 @@ describe NilCheck do
       end
       eos
       expect(src).to smell_of(NilCheck,
-                          {NilCheck => nil}, {NilCheck => nil})
+                          { NilCheck => nil }, { NilCheck => nil })
     end
   end
 end

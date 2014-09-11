@@ -41,7 +41,7 @@ module Reek
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
           "has approx #{num} statements",
           @source, SMELL_SUBCLASS,
-          {STATEMENT_COUNT_KEY => num})
+          { STATEMENT_COUNT_KEY => num })
         [smell]
       end
     end

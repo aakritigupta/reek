@@ -57,7 +57,7 @@ module Reek
           SmellWarning.new(SMELL_CLASS, ctx.full_name, found_call.lines,
                            found_call.smell_message,
                            @source, SMELL_SUBCLASS,
-                           {CALL_KEY => found_call.call, OCCURRENCES_KEY => found_call.occurs})
+                           { CALL_KEY => found_call.call, OCCURRENCES_KEY => found_call.occurs })
         end
       end
 

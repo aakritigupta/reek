@@ -55,7 +55,7 @@ module Reek
           SmellWarning.new(SMELL_CLASS, ctx.full_name, lines,
                            "tests #{expr} at least #{occurs} times",
                            @source, SMELL_SUBCLASS,
-                           {'expression' => expr, 'occurrences' => occurs})
+                           { 'expression' => expr, 'occurrences' => occurs })
         end
       end
 

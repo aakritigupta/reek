@@ -52,7 +52,7 @@ module Reek
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
           "has at least #{count} instance variables",
           @source, SMELL_SUBCLASS,
-          {IVAR_COUNT_KEY => count})
+          { IVAR_COUNT_KEY => count })
         [smell]
       end
     end

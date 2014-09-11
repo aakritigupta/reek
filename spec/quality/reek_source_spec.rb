@@ -4,7 +4,7 @@ require 'flay'
 RSpec::Matchers.define :flay do |threshold|
   match do |dirs_and_files|
     @threshold = threshold
-    @flay = Flay.new({fuzzy: false, verbose: false, mass: @threshold})
+    @flay = Flay.new({ fuzzy: false, verbose: false, mass: @threshold })
     @flay.process(*Flay.expand_dirs_to_files(dirs_and_files))
     @flay.total > 0
   end

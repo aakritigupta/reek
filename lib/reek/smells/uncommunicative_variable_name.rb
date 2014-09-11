@@ -60,7 +60,7 @@ module Reek
         end.map do |name, lines|
           SmellWarning.new(SMELL_CLASS, ctx.full_name, lines,
                            "has the variable name '#{name}'",
-                           @source, SMELL_SUBCLASS, {VARIABLE_NAME_KEY => name.to_s})
+                           @source, SMELL_SUBCLASS, { VARIABLE_NAME_KEY => name.to_s })
         end
       end
 

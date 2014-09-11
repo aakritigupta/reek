@@ -51,7 +51,7 @@ module Reek
           target = ref.format_ruby
           SmellWarning.new(SMELL_CLASS, method_ctx.full_name, [method_ctx.exp.line],
                            "refers to #{target} more than self",
-                           @source, SMELL_SUBCLASS, {RECEIVER_KEY => target, REFERENCES_KEY => occurs})
+                           @source, SMELL_SUBCLASS, { RECEIVER_KEY => target, REFERENCES_KEY => occurs })
         end
       end
     end

@@ -31,7 +31,7 @@ module Reek
           param_name = param.to_s
           SmellWarning.new(SMELL_CLASS, method_ctx.full_name, [method_ctx.exp.line],
                            "has boolean parameter '#{param_name}'",
-                           @source, SMELL_SUBCLASS, {PARAMETER_KEY => param_name})
+                           @source, SMELL_SUBCLASS, { PARAMETER_KEY => param_name })
         end
       end
     end
