@@ -21,11 +21,6 @@ Lint/HandleExceptions:
 Lint/LiteralInCondition:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Lint/StringConversionInInterpolation:
-  Enabled: false
-
 # Offense count: 9
 # Cop supports --auto-correct.
 Lint/UnusedBlockArgument:
