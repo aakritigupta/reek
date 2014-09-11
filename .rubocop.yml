@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - 'spec/samples/**/*'
+    - 'tmp/**/*'
 
 # Allow small arrays of words with quotes
 Style/WordArray:
