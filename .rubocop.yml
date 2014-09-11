@@ -7,4 +7,8 @@ AllCops:
 Style/WordArray:
   MinSize: 3
 
+# Allow single-line method definitions
+Style/SingleLineMethods:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml
