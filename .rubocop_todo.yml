@@ -329,8 +329,3 @@ Style/UnneededPercentQ:
 # Cop supports --auto-correct.
 Style/WhenThen:
   Enabled: false
-
-# Offense count: 9
-# Cop supports --auto-correct.
-Style/WordArray:
-  MinSize: 3

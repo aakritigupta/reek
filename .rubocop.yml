@@ -2,4 +2,8 @@ AllCops:
   Exclude:
     - 'spec/samples/**/*'
 
+# Allow small arrays of words with quotes
+Style/WordArray:
+  MinSize: 3
+
 inherit_from: .rubocop_todo.yml
