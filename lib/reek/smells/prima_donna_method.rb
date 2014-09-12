@@ -31,7 +31,7 @@ module Reek
         ctx.node_instance_methods.map do |method_sexp|
           if method_sexp.ends_with_bang?
             SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
-                             %Q!has prima donna method `#{method_sexp.name}`!,
+                             "has prima donna method `#{method_sexp.name}`",
                              @source, SMELL_SUBCLASS) unless ctx.node_instance_methods.detect { |sexp_item| sexp_item.name.to_s == method_sexp.name_without_bang }
           end
         end.compact

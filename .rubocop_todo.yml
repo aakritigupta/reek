@@ -232,12 +232,6 @@ Style/Not:
 Style/ParameterLists:
   Max: 7
 
-# Offense count: 20
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
 # Offense count: 3
 # Cop supports --auto-correct.
 Style/PerlBackrefs:
@@ -289,9 +283,4 @@ Style/StringLiterals:
 # Cop supports --auto-correct.
 # Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, Whitelist.
 Style/TrivialAccessors:
-  Enabled: false
-
-# Offense count: 17
-# Cop supports --auto-correct.
-Style/UnneededPercentQ:
   Enabled: false
