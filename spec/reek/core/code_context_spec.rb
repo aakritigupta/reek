@@ -156,8 +156,7 @@ EOS
     end
 
     it 'gets its configuration from the exp comments' do
-      expect(ctx.config_for(sniffer)).to eq({
-        'allow_calls' => ['puts'] })
+      expect(ctx.config_for(sniffer)).to eq({ 'allow_calls' => ['puts'] })
     end
 
     context 'when there is an outer' do

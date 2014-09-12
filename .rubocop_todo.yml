@@ -181,12 +181,6 @@ Style/IfUnlessModifier:
 Style/IndentArray:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/IndentHash:
-  Enabled: false
-
 # Offense count: 294
 # Configuration parameters: AllowURI.
 Style/LineLength:
