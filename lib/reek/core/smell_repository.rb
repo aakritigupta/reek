@@ -36,7 +36,7 @@ module Reek
         ]
       end
 
-      def initialize source_description, smell_classes = SmellRepository.smell_classes
+      def initialize(source_description, smell_classes = SmellRepository.smell_classes)
         @typed_detectors = nil
         @detectors = Hash.new
         smell_classes.each do |klass|
@@ -48,7 +48,7 @@ module Reek
         @detectors[klass].configure_with(config) if @detectors[klass]
       end
 
-      def report_on listener
+      def report_on(listener)
         @detectors.each_value { |detector| detector.report_on(listener) }
       end
 

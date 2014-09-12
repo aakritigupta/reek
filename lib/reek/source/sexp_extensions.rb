@@ -10,7 +10,7 @@ module Reek
           @name = name
         end
 
-        def == other
+        def ==(other)
           @name == other
         end
 
