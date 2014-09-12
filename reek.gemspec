@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-$:.push File.join(File.dirname(__FILE__), "lib")
+$LOAD_PATH.push File.join(File.dirname(__FILE__), "lib")
 require 'reek/version'
 
 Gem::Specification.new do |s|

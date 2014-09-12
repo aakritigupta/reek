@@ -1,16 +1,17 @@
-$:.unshift 'lib'
+$LOAD_PATH.unshift 'lib'
 
 require 'rubygems'
 require 'tempfile'
 require 'fileutils'
 require 'reek/cli/application'
+require 'English'
 
 class ReekWorld
   def run(cmd)
     stderr_file = Tempfile.new('reek-world')
     stderr_file.close
     @last_stdout = `#{cmd} 2> #{stderr_file.path}`
-    @last_exit_status = $?.exitstatus
+    @last_exit_status = $CHILD_STATUS.exitstatus
     @last_stderr = IO.read(stderr_file.path)
   end
 

@@ -268,11 +268,6 @@ Style/RegexpLiteral:
 Style/Semicolon:
   Enabled: false
 
-# Offense count: 4
-# Cop supports --auto-correct.
-Style/SpecialGlobalVars:
-  Enabled: false
-
 # Offense count: 170
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
