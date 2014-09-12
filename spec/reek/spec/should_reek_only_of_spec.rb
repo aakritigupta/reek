@@ -53,7 +53,7 @@ describe ShouldReekOnlyOf do
       [
         SmellWarning.new('ControlCouple', 'context', [1], 'any old message'),
         SmellWarning.new('FeatureEnvy', 'context', [1], 'any old message')
-        ]
+      ]
     end
 
     it_should_behave_like 'no match'
@@ -64,7 +64,7 @@ describe ShouldReekOnlyOf do
       [
         SmellWarning.new('ControlCouple', 'context', [1], 'any old message'),
         SmellWarning.new(@expected_smell_class.to_s, 'context', [1], "message mentioning #{@expected_context_name}")
-        ]
+      ]
     end
 
     it_should_behave_like 'no match'
