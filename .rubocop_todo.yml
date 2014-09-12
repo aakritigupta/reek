@@ -236,10 +236,6 @@ Style/RedundantReturn:
 Style/RedundantSelf:
   Enabled: false
 
-# Offense count: 1
-Style/RegexpLiteral:
-  MaxSlashes: 2
-
 # Offense count: 170
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

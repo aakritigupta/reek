@@ -14,8 +14,8 @@ Then /^stdout equals "([^\"]*)"$/ do |report|
   expect(@last_stdout).to eq report
 end
 
-Then /^stdout includes \/([^\"]*)\/$/ do |report|
-  expect(@last_stdout).to match(report)
+Then /^stdout includes "(.*)"$/ do |text|
+  expect(@last_stdout).to include text
 end
 
 Then /^it succeeds$/ do
