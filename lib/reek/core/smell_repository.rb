@@ -60,7 +60,7 @@ module Reek
 
       private
 
-      def smell_listeners()
+      def smell_listeners
         unless @typed_detectors
           @typed_detectors = Hash.new { |hash, key| hash[key] = [] }
           @detectors.each_value { |detector| detector.register(@typed_detectors) }

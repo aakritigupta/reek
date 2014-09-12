@@ -98,7 +98,7 @@ module Reek
       module DefnNode
         def name() self[1] end
         def argslist() self[2] end
-        def body()
+        def body
           self[3..-1].extend SexpNode
         end
         include MethodNode
@@ -112,7 +112,7 @@ module Reek
         def receiver() self[1] end
         def name() self[2] end
         def argslist() self[3] end
-        def body()
+        def body
           self[4..-1].extend SexpNode
         end
         include MethodNode
