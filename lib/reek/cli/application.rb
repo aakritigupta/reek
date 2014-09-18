@@ -27,7 +27,7 @@ module Reek
           $stderr.puts "Error: #{error}"
           @status = STATUS_ERROR
         end
-        return @status
+        @status
       end
 
       def output(text)

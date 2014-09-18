@@ -46,7 +46,7 @@ module Reek
         #      -q|-[no-]quiet      Only list files that have smells
         #      files               Names of files or dirs to be checked
         #
-        return <<EOB
+        <<EOB
 Usage: #{progname} [options] [files]
 
 Examples:

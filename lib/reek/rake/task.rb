@@ -120,7 +120,7 @@ module Reek
       def config_file_list
         files = ENV['REEK_CFG'] || @config_files
         return [] unless files
-        return FileList[files]
+        FileList[files]
       end
 
       def ruby_options
@@ -143,7 +143,7 @@ module Reek
       def source_file_list # :nodoc:
         files = ENV['REEK_SRC'] || @source_files
         return [] unless files
-        return FileList[files]
+        FileList[files]
       end
     end
   end

@@ -141,7 +141,7 @@ module Reek
             times_in_conditional += 1 if node.condition[VALUE_POSITION] == param
             times_in_conditional += node.condition.count { |inner| inner.class == Sexp && inner[VALUE_POSITION] == param }
           end
-          return times_total > times_in_conditional
+          times_total > times_in_conditional
         end
       end
     end

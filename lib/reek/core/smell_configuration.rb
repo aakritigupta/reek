@@ -40,7 +40,7 @@ module Reek
       #
       def value(key, context, fall_back)
         overrides_for(context).each { |conf| return conf[key] if conf.has_key?(key) }
-        return @options.fetch(key, fall_back)
+        @options.fetch(key, fall_back)
       end
     end
 
