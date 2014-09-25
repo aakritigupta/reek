@@ -56,10 +56,6 @@ Style/CharacterLiteral:
 Style/ClassLength:
   Max: 116
 
-# Offense count: 2
-Style/ClassVars:
-  Enabled: false
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredMethods.

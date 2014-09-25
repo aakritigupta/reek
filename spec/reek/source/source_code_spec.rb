@@ -13,7 +13,8 @@ describe SourceCode do
 
     before :each do
       @catcher = StringIO.new
-      @old_err_io = (SourceCode.err_io = @catcher)
+      @old_std_err = $stderr
+      $stderr = @catcher
     end
 
     shared_examples_for "handling and recording the error" do
@@ -74,7 +75,7 @@ describe SourceCode do
     end
 
     after :each do
-      SourceCode.err_io = @old_err_io
+      $stderr = @old_std_err
     end
   end
 end
