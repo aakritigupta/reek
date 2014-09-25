@@ -19,4 +19,8 @@ Style/SignalException:
 Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
 
+# Allow s()
+Style/MethodCallParentheses:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml

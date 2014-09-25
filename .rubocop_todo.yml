@@ -146,11 +146,6 @@ Style/LineLength:
   Max: 167
 
 # Offense count: 12
-# Cop supports --auto-correct.
-Style/MethodCallParentheses:
-  Enabled: false
-
-# Offense count: 12
 # Configuration parameters: CountComments.
 Style/MethodLength:
   Max: 40
