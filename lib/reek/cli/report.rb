@@ -136,9 +136,7 @@ module Reek
     class QuietReport < Report
       def gather_results
         @examiners.each_with_object([]) do |examiner, result|
-          if examiner.smelly?
-            result << summarize_single_examiner(examiner)
-          end
+          result << summarize_single_examiner(examiner) if examiner.smelly?
         end
       end
     end
