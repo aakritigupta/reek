@@ -10,7 +10,7 @@ module Reek
       def default_assignments
         result = []
         self[1..-1].each do |exp|
-          result << exp[1..2] if Sexp === exp && exp[0] == :lasgn
+          result << exp[1..2] if exp.is_a?(Sexp) && exp[0] == :lasgn
         end
         result
       end

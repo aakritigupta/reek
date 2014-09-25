@@ -134,7 +134,7 @@ module Reek
         end
 
         def allow_calls?(method)
-          @allow_calls.any? { |allow| /#{allow}/ === method }
+          @allow_calls.any? { |allow| /#{allow}/ =~ method }
         end
       end
     end

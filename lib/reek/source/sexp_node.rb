@@ -17,7 +17,7 @@ module Reek
       end
 
       def is_language_node?
-        Symbol === first
+        first.is_a? Symbol
       end
 
       def has_type?(type)
@@ -35,7 +35,7 @@ module Reek
       end
 
       def each_sexp
-        each { |elem| yield elem if Sexp === elem }
+        each { |elem| yield elem if elem.is_a? Sexp }
       end
 
       #
@@ -60,7 +60,7 @@ module Reek
       end
 
       def deep_copy
-        Sexp.new(*map { |elem| Sexp === elem ? elem.deep_copy : elem })
+        Sexp.new(*map { |elem| elem.is_a?(Sexp) ? elem.deep_copy : elem })
       end
     end
   end

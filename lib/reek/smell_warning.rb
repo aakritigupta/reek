@@ -83,7 +83,7 @@ module Reek
 
     def contains_all?(patterns)
       rpt = sort_key.to_s
-      patterns.all? { |pattern| pattern === rpt }
+      patterns.all? { |pattern| pattern =~ rpt }
     end
 
     def matches?(klass, patterns)

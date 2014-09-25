@@ -57,7 +57,7 @@ module Reek
           report_error(error.to_s)
         end
 
-        report_error('Not a hash') unless Hash === result
+        report_error('Not a hash') unless result.is_a? Hash
 
         result
       end

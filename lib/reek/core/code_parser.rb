@@ -26,7 +26,7 @@ module Reek
       end
 
       def process_default(exp)
-        exp.each { |sub| process(sub) if Array === sub }
+        exp.each { |sub| process(sub) if sub.is_a? Array }
       end
 
       def process_module(exp)

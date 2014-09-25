@@ -63,7 +63,7 @@ module Reek
 
       def find_iters(exp, depth)
         exp.map do |elem|
-          next unless Sexp === elem
+          next unless elem.is_a? Sexp
           case elem.first
           when :iter
             find_iters_for_iter_node(elem, depth)
@@ -85,7 +85,7 @@ module Reek
 
       def ignored_iterator?(exp)
         name = exp.call.method_name.to_s
-        @ignore_iterators.any? { |pattern| /#{pattern}/ === name }
+        @ignore_iterators.any? { |pattern| /#{pattern}/ =~ name }
       end
     end
   end

@@ -79,7 +79,7 @@ module Reek
 
         def parameters
           @parameters ||= argslist[1..-1].map do |param|
-            MethodParameter.new(Sexp === param ?  param[1] : param)
+            MethodParameter.new(param.is_a?(Sexp) ? param[1] : param)
           end
         end
 
@@ -162,7 +162,7 @@ module Reek
         def name() self[1] end
 
         def simple_name
-          Sexp === name ? name.simple_name : name
+          name.is_a?(Sexp) ? name.simple_name : name
         end
 
         def full_name(outer)
