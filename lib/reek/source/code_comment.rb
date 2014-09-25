@@ -25,6 +25,7 @@ module Reek
       end
 
     protected
+
       def add_to_config(smell, options)
         options ||= ': { enabled: false }'
         @config.merge! YAML.load(smell.gsub(/(?:^|_)(.)/) { $1.upcase } + options)
