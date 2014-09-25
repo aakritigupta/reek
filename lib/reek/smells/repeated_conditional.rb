@@ -64,11 +64,11 @@ module Reek
       #
       def conditional_counts(sexp)
         result = Hash.new { |hash, key| hash[key] = [] }
-        collector = proc { |node|
+        collector = proc do |node|
           condition = node.condition
           next if condition.nil? or condition == s(:call, nil, :block_given?)
           result[condition].push(condition.line)
-        }
+        end
         [:if, :case].each { |stmt| sexp.local_nodes(stmt, &collector) }
         result
       end
