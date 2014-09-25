@@ -40,10 +40,6 @@ Style/Alias:
 Style/AndOr:
   Enabled: false
 
-# Offense count: 7
-Style/AsciiComments:
-  Enabled: false
-
 # Offense count: 18
 Style/CaseEquality:
   Enabled: false

@@ -6,19 +6,22 @@ module Reek
     # Excerpt from:
     # http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
     # since this sums it up really well:
-    # ------------------------------
-    # The ! in method names that end with ! means, “This method is dangerous”
-    # or, more precisely, this method is the “dangerous” version of an
-    # equivalent method, with the same name minus the !.  “Danger” is relative;
-    # the ! doesn’t mean anything at all unless the method name it’s in
-    # corresponds to a similar but bang-less method name.  Don’t add ! to your
-    # destructive (receiver-changing) methods’ names, unless you consider the
-    # changing to be “dangerous” and you have a “non-dangerous” equivalent
-    # method without the !.  If some arbitrary subset of destructive methods end
-    # with !, then the whole point of ! gets distorted and diluted, and ! ceases
-    # to convey any information whatsoever
-    # ------------------------------
+    #
+    #   The ! in method names that end with ! means, "This method is dangerous"
+    #   -- or, more precisely, this method is the "dangerous" version of an
+    #   equivalent method, with the same name minus the !. "Danger" is
+    #   relative; the ! doesn't mean anything at all unless the method name
+    #   it's in corresponds to a similar but bang-less method name.
+    #
+    #   Don't add ! to your destructive (receiver-changing) methods' names,
+    #   unless you consider the changing to be "dangerous" and you have a
+    #   "non-dangerous" equivalent method without the !. If some arbitrary
+    #   subset of destructive methods end with !, then the whole point of !
+    #   gets distorted and diluted, and ! ceases to convey any information
+    #   whatsoever.
+    #
     # Such a method is called PrimaDonnaMethod and is reported as a smell.
+    #
     class PrimaDonnaMethod < SmellDetector
       SMELL_CLASS    = smell_class_name
       SMELL_SUBCLASS = smell_class_name
