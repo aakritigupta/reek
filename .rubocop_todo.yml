@@ -99,11 +99,6 @@ Style/LineLength:
 Style/MethodLength:
   Max: 40
 
-# Offense count: 1
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/MethodName:
-  Enabled: false
-
 # Offense count: 6
 Style/MultilineBlockChain:
   Enabled: false

@@ -46,10 +46,10 @@ module Reek
         end
 
         def nil_chk?(call)
-          nilQ_use?(call) || eq_nil_use?(call)
+          nil_query_use?(call) || eq_nil_use?(call)
         end
 
-        def nilQ_use?(call)
+        def nil_query_use?(call)
           call.last == :nil?
         end
 
