@@ -19,7 +19,7 @@ module Reek
     #
     class DuplicateMethodCall < SmellDetector
       SMELL_CLASS = 'Duplication'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       CALL_KEY = 'call'
       OCCURRENCES_KEY = 'occurrences'

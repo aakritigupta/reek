@@ -20,7 +20,7 @@ module Reek
     class UncommunicativeVariableName < SmellDetector
 
       SMELL_CLASS = 'UncommunicativeName'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
       VARIABLE_NAME_KEY = 'variable_name'
 
       # The name of the config field that lists the regexps of

@@ -35,7 +35,7 @@ module Reek
     #
     class UtilityFunction < SmellDetector
 
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
       SMELL_CLASS = 'LowCohesion'
 
       # The name of the config field that sets the maximum number of

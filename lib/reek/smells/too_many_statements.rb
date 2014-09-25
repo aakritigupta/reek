@@ -12,7 +12,7 @@ module Reek
     class TooManyStatements < SmellDetector
 
       SMELL_CLASS = 'LongMethod'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       STATEMENT_COUNT_KEY = 'statement_count'
 

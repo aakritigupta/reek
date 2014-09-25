@@ -14,7 +14,7 @@ module Reek
     class TooManyInstanceVariables < SmellDetector
 
       SMELL_CLASS = 'LargeClass'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
       IVAR_COUNT_KEY = 'ivar_count'
 
       # The name of the config field that sets the maximum number of instance

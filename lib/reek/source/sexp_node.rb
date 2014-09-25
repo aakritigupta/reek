@@ -13,7 +13,7 @@ module Reek
       end
 
       def hash
-        self.inspect.hash
+        inspect.hash
       end
 
       def is_language_node?

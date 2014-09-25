@@ -20,7 +20,7 @@ module Reek
     #
     class Attribute < SmellDetector
 
-      SMELL_CLASS = self.name.split(/::/)[-1]
+      SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
 
       ATTRIBUTE_KEY = 'attribute'

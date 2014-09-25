@@ -19,8 +19,8 @@ module Reek
     #
     class DataClump < SmellDetector
 
-      SMELL_CLASS = self.name.split(/::/)[-1]
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_CLASS = name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       METHODS_KEY = 'methods'
       OCCURRENCES_KEY = 'occurrences'

@@ -9,7 +9,7 @@ module Reek
     class NilCheck < SmellDetector
 
       SMELL_CLASS = 'SimulatedPolymorphism'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       def examine_context(ctx)
         call_nodes = CallNodeFinder.new(ctx)

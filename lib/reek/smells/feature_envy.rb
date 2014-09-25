@@ -35,7 +35,7 @@ module Reek
       include ExcludeInitialize
 
       SMELL_CLASS = 'LowCohesion'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       RECEIVER_KEY = 'receiver'
       REFERENCES_KEY = 'references'

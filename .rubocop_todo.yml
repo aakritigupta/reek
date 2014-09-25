@@ -225,11 +225,6 @@ Style/PredicateName:
 Style/RaiseArgs:
   EnforcedStyle: compact
 
-# Offense count: 25
-# Cop supports --auto-correct.
-Style/RedundantSelf:
-  Enabled: false
-
 # Offense count: 170
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

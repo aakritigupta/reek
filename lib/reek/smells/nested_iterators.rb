@@ -11,7 +11,7 @@ module Reek
     #
     class NestedIterators < SmellDetector
 
-      SMELL_CLASS = self.name.split(/::/)[-1]
+      SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
       # SMELL: should be a subclass of UnnecessaryComplexity
       NESTING_DEPTH_KEY = 'depth'

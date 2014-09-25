@@ -44,7 +44,7 @@ module Reek
     class ControlParameter < SmellDetector
 
       SMELL_CLASS = 'ControlCouple'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
       PARAMETER_KEY = 'parameter'
       VALUE_POSITION = 1
 

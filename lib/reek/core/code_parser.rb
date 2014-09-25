@@ -22,7 +22,7 @@ module Reek
       def process(exp)
         meth = "process_#{exp[0]}"
         meth = :process_default unless self.respond_to?(meth)
-        self.send(meth, exp)
+        send(meth, exp)
         @element
       end
 

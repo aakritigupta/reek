@@ -24,7 +24,7 @@ module Reek
     class RepeatedConditional < SmellDetector
 
       SMELL_CLASS = 'SimulatedPolymorphism'
-      SMELL_SUBCLASS = self.name.split(/::/)[-1]
+      SMELL_SUBCLASS = name.split(/::/)[-1]
 
       def self.contexts      # :nodoc:
         [:class]
