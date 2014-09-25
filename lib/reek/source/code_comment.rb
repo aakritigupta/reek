@@ -28,8 +28,8 @@ module Reek
       def add_to_config(smell, options)
         options ||= ': { enabled: false }'
         config.merge! YAML.load(smell.gsub(/(?:^|_)(.)/) { $1.upcase } + options)
-        # extend this to all configs -------------------------^
-        # extend to allow configuration of whole smell class, not just subclass
+        # TODO: extend this to all configs -------------------^
+        # TODO: extend to allow configuration of whole smell class, not just subclass
       end
     end
   end
