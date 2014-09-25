@@ -63,10 +63,6 @@ Style/Documentation:
 Style/GuardClause:
   Enabled: false
 
-# Offense count: 6
-Style/MultilineBlockChain:
-  Enabled: false
-
 # Offense count: 8
 # Configuration parameters: NamePrefix, NamePrefixBlacklist.
 Style/PredicateName:

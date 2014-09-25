@@ -27,6 +27,10 @@ Style/EmptyLineBetweenDefs:
 Style/MethodCallParentheses:
   Enabled: false
 
+# Allow multiline block chains
+Style/MultilineBlockChain:
+  Enabled: false
+
 # Allow Perl-style references to regex matches
 Style/PerlBackrefs:
   Enabled: false
