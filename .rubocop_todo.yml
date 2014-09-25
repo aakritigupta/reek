@@ -46,11 +46,6 @@ Style/BracesAroundHashParameters:
 Style/CaseEquality:
   Enabled: false
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/CharacterLiteral:
-  Enabled: false
-
 # Offense count: 1
 # Configuration parameters: CountComments.
 Style/ClassLength:

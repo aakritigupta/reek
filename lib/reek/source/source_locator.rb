@@ -18,7 +18,7 @@ module Reek
 
       def all_ruby_source_files(paths)
         paths.map do |path|
-          if test ?d, path
+          if test 'd', path
             all_ruby_source_files(Dir["#{path}/**/*.rb"])
           else
             path
@@ -28,7 +28,7 @@ module Reek
 
       def valid_paths
         all_ruby_source_files(@paths).select do |path|
-          if test ?f, path
+          if test 'f', path
             true
           else
             $stderr.puts "Error: No such file - #{path}"
