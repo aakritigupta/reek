@@ -70,7 +70,7 @@ module Reek
       end
 
       def uses_super_with_implicit_arguments?
-        exp.body.has_nested_node? :zsuper
+        exp.body.contains_nested_node? :zsuper
       end
     end
   end

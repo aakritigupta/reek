@@ -67,8 +67,6 @@ module Reek
     #
     attr_reader :status
 
-    def is_active() @status[ACTIVE_KEY] end
-
     def hash
       sort_key.hash
     end

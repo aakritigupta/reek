@@ -16,14 +16,6 @@ module Reek
         inspect.hash
       end
 
-      def is_language_node?
-        first.is_a? Symbol
-      end
-
-      def has_type?(type)
-        is_language_node? && first == type
-      end
-
       def each_node(type, ignoring, &blk)
         if block_given?
           look_for(type, ignoring, &blk)
@@ -50,7 +42,7 @@ module Reek
         blk.call(self) if first == target_type
       end
 
-      def has_nested_node?(target_type)
+      def contains_nested_node?(target_type)
         look_for(target_type) { |_elem| return true }
         false
       end

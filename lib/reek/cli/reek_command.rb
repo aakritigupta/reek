@@ -12,7 +12,7 @@ module Reek
         @parser.sources.each do |source|
           reporter.add_examiner(Examiner.new(source, config_files, smell_names))
         end
-        reporter.has_smells? ? app.report_smells : app.report_success
+        reporter.smells? ? app.report_smells : app.report_success
         reporter.show
       end
 

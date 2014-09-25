@@ -54,7 +54,7 @@ module Reek
         @reject_names = value(REJECT_KEY, ctx, DEFAULT_REJECT_SET)
         @accept_names = value(ACCEPT_KEY, ctx, DEFAULT_ACCEPT_SET)
         variable_names(ctx.exp).select do |name, _lines|
-          is_bad_name?(name, ctx)
+          bad_name?(name, ctx)
         end.map do |name, lines|
           SmellWarning.new(SMELL_CLASS, ctx.full_name, lines,
                            "has the variable name '#{name}'",
@@ -62,7 +62,7 @@ module Reek
         end
       end
 
-      def is_bad_name?(name, _ctx)
+      def bad_name?(name, _ctx)
         var = name.to_s.gsub(/^[@\*\&]*/, '')
         return false if @accept_names.include?(var)
         @reject_names.find { |patt| patt =~ var }

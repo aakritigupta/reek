@@ -20,7 +20,7 @@ module Reek
         @config
       end
 
-      def is_descriptive?
+      def descriptive?
         @text.split(/\s+/).length >= 2
       end
 

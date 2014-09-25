@@ -55,7 +55,7 @@ module Reek
         @accept_names = value(ACCEPT_KEY, ctx, DEFAULT_ACCEPT_SET)
         context_expression = ctx.exp
         context_expression.parameter_names.select do |name|
-          is_bad_name?(name) && ctx.uses_param?(name)
+          bad_name?(name) && ctx.uses_param?(name)
         end.map do |name|
           SmellWarning.new(SMELL_CLASS, ctx.full_name, [context_expression.line],
                            "has the parameter name '#{name}'",
@@ -63,7 +63,7 @@ module Reek
         end
       end
 
-      def is_bad_name?(name)
+      def bad_name?(name)
         var = name.to_s.gsub(/^[@\*\&]*/, '')
         return false if var == '*' || @accept_names.include?(var)
         @reject_names.find { |patt| patt =~ var }
