@@ -3,6 +3,10 @@ AllCops:
     - 'spec/samples/**/*'
     - 'tmp/**/*'
 
+# Be a little more lenient with line length
+Metrics/LineLength:
+  Max: 92
+
 # Allow small arrays of words with quotes
 Style/WordArray:
   MinSize: 3
