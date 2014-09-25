@@ -69,7 +69,7 @@ module Reek
         [smell]
       end
 
-    private
+      private
 
       def depends_on_instance?(exp)
         Reek::Source::ReferenceCollector.new(exp).num_refs_to_self > 0

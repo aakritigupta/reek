@@ -82,7 +82,7 @@ module Reek
         define
       end
 
-  private
+      private
 
       def define # :nodoc:
         desc 'Check for code smells' unless ::Rake.application.last_comment

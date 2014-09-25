@@ -14,7 +14,7 @@ module Reek
         valid_paths.map { |path| File.new(path).to_reek_source }
       end
 
-    private
+      private
 
       def all_ruby_source_files(paths)
         paths.map do |path|

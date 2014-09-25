@@ -42,7 +42,7 @@ module Reek
         check_num_ivars(ctx)
       end
 
-    private
+      private
 
       def check_num_ivars(ctx)  # :nodoc:
         count = ctx.local_nodes(:iasgn).map { |iasgn| iasgn[1] }.uniq.length

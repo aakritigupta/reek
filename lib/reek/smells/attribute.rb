@@ -46,7 +46,7 @@ module Reek
         end
       end
 
-    private
+      private
 
       def attributes_in(module_ctx)
         result = Set.new

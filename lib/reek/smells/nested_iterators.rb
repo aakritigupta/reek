@@ -53,7 +53,7 @@ module Reek
         # BUG: no longer reports nesting outside methods (eg. in Optparse)
       end
 
-    private
+      private
 
       def find_deepest_iterator(ctx)
         @ignore_iterators = value(IGNORE_ITERATORS_KEY, ctx, DEFAULT_IGNORE_ITERATORS)

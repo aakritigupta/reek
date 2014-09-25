@@ -82,7 +82,7 @@ module Reek
         @total_smell_count > 0
       end
 
-    private
+      private
 
       def all_smells
         @all_smells ||= @examiners.each_with_object([]) { |examiner, smells| smells << examiner.smells }

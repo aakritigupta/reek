@@ -44,7 +44,7 @@ module Reek
         check_num_methods(ctx)
       end
 
-    private
+      private
 
       def check_num_methods(ctx)  # :nodoc:
         actual = ctx.local_nodes(:defn).length

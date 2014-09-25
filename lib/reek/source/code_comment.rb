@@ -24,7 +24,7 @@ module Reek
         @text.split(/\s+/).length >= 2
       end
 
-    protected
+      protected
 
       def add_to_config(smell, options)
         options ||= ': { enabled: false }'

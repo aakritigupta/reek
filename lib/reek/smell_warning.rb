@@ -94,7 +94,7 @@ module Reek
       listener.found_smell(self)
     end
 
-  protected
+    protected
 
     def sort_key
       [@location[CONTEXT_KEY], @smell[MESSAGE_KEY], @smell[CLASS_KEY]]
