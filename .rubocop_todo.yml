@@ -84,11 +84,6 @@ Style/Documentation:
 Style/DotPosition:
   Enabled: false
 
-# Offense count: 1
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/FormatString:
-  Enabled: false
-
 # Offense count: 6
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:

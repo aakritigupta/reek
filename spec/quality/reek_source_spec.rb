@@ -22,7 +22,7 @@ RSpec::Matchers.define :flay do |threshold|
     @flay.masses.each do |hash, mass|
       nodes = @flay.hashes[hash]
       match = @flay.identical[hash] ? "IDENTICAL" : "Similar"
-      lines << ("%s code found in %p (%d)" % [match, nodes.first.first, mass])
+      lines << format("%s code found in %p (%d)", match, nodes.first.first, mass)
       nodes.each { |x| lines << "  #{x.file}:#{x.line}" }
     end
     lines.join("\n")
