@@ -51,6 +51,7 @@ module Reek
         def receiver() self[1] end
         def method_name() self[2] end
         def args() self[3..-1] end
+
         def arg_names
           args.map { |arg| arg[1] }
         end
@@ -98,6 +99,7 @@ module Reek
       module DefnNode
         def name() self[1] end
         def argslist() self[2] end
+
         def body
           self[3..-1].extend SexpNode
         end
@@ -112,6 +114,7 @@ module Reek
         def receiver() self[1] end
         def name() self[2] end
         def argslist() self[3] end
+
         def body
           self[4..-1].extend SexpNode
         end
@@ -131,6 +134,7 @@ module Reek
         def args() self[2] end
         def block() self[3] end
         def parameters() self[2] || [] end
+
         def parameter_names
           parameters[1..-1].to_a
         end
@@ -165,6 +169,7 @@ module Reek
           prefix = outer == '' ? '' : "#{outer}::"
           "#{prefix}#{text_name}"
         end
+
         def text_name
           SexpNode.format(name)
         end
@@ -177,6 +182,7 @@ module Reek
 
       module YieldNode
         def args() self[1..-1] end
+
         def arg_names
           args.map { |arg| arg[1] }
         end

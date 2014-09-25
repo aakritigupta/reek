@@ -48,6 +48,7 @@ module Reek
         def contexts      # :nodoc:
           [:defn]
         end
+
         def default_config
           super.merge(HELPER_CALLS_LIMIT_KEY => DEFAULT_HELPER_CALLS_LIMIT)
         end

@@ -15,4 +15,8 @@ Style/SingleLineMethods:
 Style/SignalException:
   EnforcedStyle: only_raise
 
+# Require empty lines between defs, except for one-line defs
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
 inherit_from: .rubocop_todo.yml
