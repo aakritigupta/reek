@@ -85,11 +85,6 @@ Style/DotPosition:
   Enabled: false
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLiteral:
-  Enabled: false
-
-# Offense count: 1
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/FormatString:
   Enabled: false

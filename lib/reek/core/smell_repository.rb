@@ -37,7 +37,7 @@ module Reek
 
       def initialize(source_description, smell_classes = SmellRepository.smell_classes)
         @typed_detectors = nil
-        @detectors = Hash.new
+        @detectors = {}
         smell_classes.each do |klass|
           @detectors[klass] = klass.new(source_description)
         end
