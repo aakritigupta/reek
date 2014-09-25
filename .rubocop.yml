@@ -50,5 +50,3 @@ Style/StringLiterals:
 # Only register TrivialAccessors offenses when the name matches
 Style/TrivialAccessors:
   ExactNameMatch: true
-
-inherit_from: .rubocop_todo.yml
