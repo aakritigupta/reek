@@ -65,8 +65,8 @@ module Reek
         return [] if num_helper_methods(method_ctx) <= value(HELPER_CALLS_LIMIT_KEY, method_ctx, DEFAULT_HELPER_CALLS_LIMIT)
         # SMELL: loads of calls to value{} with the above pattern
         smell = SmellWarning.new(SMELL_CLASS, method_ctx.full_name, [method_ctx.exp.line],
-          "doesn't depend on instance state",
-          @source, SMELL_SUBCLASS)
+                                 "doesn't depend on instance state",
+                                 @source, SMELL_SUBCLASS)
         [smell]
       end
 

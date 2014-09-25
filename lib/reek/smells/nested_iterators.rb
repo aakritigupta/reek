@@ -43,9 +43,9 @@ module Reek
 
         if depth && depth > value(MAX_ALLOWED_NESTING_KEY, ctx, DEFAULT_MAX_ALLOWED_NESTING)
           smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [exp.line],
-            "contains iterators nested #{depth} deep",
-            @source, SMELL_SUBCLASS,
-            NESTING_DEPTH_KEY => depth)
+                                   "contains iterators nested #{depth} deep",
+                                   @source, SMELL_SUBCLASS,
+                                   NESTING_DEPTH_KEY => depth)
           [smell]
         else
           []

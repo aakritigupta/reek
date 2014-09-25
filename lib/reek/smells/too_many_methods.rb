@@ -50,9 +50,9 @@ module Reek
         actual = ctx.local_nodes(:defn).length
         return [] if actual <= @max_allowed_methods
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
-          "has at least #{actual} methods",
-          @source, SMELL_SUBCLASS,
-          METHOD_COUNT_KEY => actual)
+                                 "has at least #{actual} methods",
+                                 @source, SMELL_SUBCLASS,
+                                 METHOD_COUNT_KEY => actual)
         [smell]
       end
     end

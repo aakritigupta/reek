@@ -102,7 +102,7 @@ describe SmellWarning do
         @subclass = 'TooManyParties'
         @parameters = { 'one' => 34, 'two' => 'second' }
         @warning = SmellWarning.new(@class, @context_name, @lines, @message,
-          @source, @subclass, @parameters)
+                                    @source, @subclass, @parameters)
         @yaml = @warning.to_yaml
       end
 

@@ -138,7 +138,7 @@ EOS
       end
     EOS
     expect(src).to smell_of(DataClump,
-                        DataClump::PARAMETERS_KEY => %w(p1 p2))
+                            DataClump::PARAMETERS_KEY => %w(p1 p2))
   end
 end
 

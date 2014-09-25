@@ -45,9 +45,9 @@ module Reek
         num_params = ctx.exp.arg_names.length
         return [] if num_params <= @max_allowed_params
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
-          "has #{num_params} parameters",
-          @source, SMELL_SUBCLASS,
-          PARAMETER_COUNT_KEY => num_params)
+                                 "has #{num_params} parameters",
+                                 @source, SMELL_SUBCLASS,
+                                 PARAMETER_COUNT_KEY => num_params)
         [smell]
       end
     end

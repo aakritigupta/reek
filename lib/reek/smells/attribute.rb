@@ -38,9 +38,9 @@ module Reek
       def examine_context(ctx)
         attributes_in(ctx).map do |attr, line|
           smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [line],
-            "declares the attribute #{attr}",
-            @source, SMELL_SUBCLASS,
-            ATTRIBUTE_KEY => attr.to_s)
+                                   "declares the attribute #{attr}",
+                                   @source, SMELL_SUBCLASS,
+                                   ATTRIBUTE_KEY => attr.to_s)
           smell
         end
       end

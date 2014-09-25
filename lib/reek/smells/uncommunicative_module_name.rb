@@ -62,8 +62,8 @@ module Reek
         return [] if @accept_names.include?(var)
         return [] unless @reject_names.detect { |patt| patt === var }
         smell = SmellWarning.new(SMELL_CLASS, full_name, [exp.line],
-          "has the name '#{name}'",
-          @source, SMELL_SUBCLASS, MODULE_NAME_KEY => name)
+                                 "has the name '#{name}'",
+                                 @source, SMELL_SUBCLASS, MODULE_NAME_KEY => name)
         [smell]
       end
     end

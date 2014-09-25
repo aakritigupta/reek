@@ -37,9 +37,9 @@ module Reek
         num = ctx.num_statements
         return [] if num <= @max_allowed_statements
         smell = SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
-          "has approx #{num} statements",
-          @source, SMELL_SUBCLASS,
-          STATEMENT_COUNT_KEY => num)
+                                 "has approx #{num} statements",
+                                 @source, SMELL_SUBCLASS,
+                                 STATEMENT_COUNT_KEY => num)
         [smell]
       end
     end
