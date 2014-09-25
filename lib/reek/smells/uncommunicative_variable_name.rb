@@ -79,8 +79,8 @@ module Reek
         assignment_nodes = exp.each_node(:lasgn, [:class, :module, :defs, :defn])
 
         case exp.first
-          when :class, :module
-            assignment_nodes += exp.each_node(:iasgn, [:class, :module])
+        when :class, :module
+          assignment_nodes += exp.each_node(:iasgn, [:class, :module])
         end
 
         assignment_nodes.each { |asgn| accumulator[asgn[1]].push(asgn.line) }
