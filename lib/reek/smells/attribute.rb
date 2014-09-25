@@ -13,9 +13,8 @@ module Reek
     # +attr_reader+, +attr_writer+ and +attr_accessor+ -- including those
     # that are private.
     #
-    # TODO:
-    # * eliminate private attributes
-    # * catch attributes declared "by hand"
+    # TODO: Eliminate private attributes
+    # TODO: Catch attributes declared "by hand"
     #
     class Attribute < SmellDetector
       SMELL_CLASS = name.split(/::/)[-1]
