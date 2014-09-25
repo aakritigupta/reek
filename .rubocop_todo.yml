@@ -128,11 +128,6 @@ Style/PerlBackrefs:
 Style/PredicateName:
   Enabled: false
 
-# Offense count: 1
-# Configuration parameters: SupportedStyles.
-Style/RaiseArgs:
-  EnforcedStyle: compact
-
 # Offense count: 170
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

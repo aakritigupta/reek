@@ -77,7 +77,7 @@ module Reek
       # Error.
       #
       def report_error(reason)
-        raise ConfigFileException.new message(reason)
+        raise ConfigFileException, message(reason)
       end
 
       def message(reason)
