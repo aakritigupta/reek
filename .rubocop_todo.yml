@@ -104,11 +104,6 @@ Style/Next:
 Style/ParameterLists:
   Max: 7
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/PerlBackrefs:
-  Enabled: false
-
 # Offense count: 8
 # Configuration parameters: NamePrefixBlacklist.
 Style/PredicateName:

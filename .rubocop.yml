@@ -23,4 +23,8 @@ Style/EmptyLineBetweenDefs:
 Style/MethodCallParentheses:
   Enabled: false
 
+# Allow Perl-style references to regex matches
+Style/PerlBackrefs:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml
