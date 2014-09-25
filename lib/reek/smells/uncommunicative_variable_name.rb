@@ -53,7 +53,7 @@ module Reek
       def examine_context(ctx)
         @reject_names = value(REJECT_KEY, ctx, DEFAULT_REJECT_SET)
         @accept_names = value(ACCEPT_KEY, ctx, DEFAULT_ACCEPT_SET)
-        variable_names(ctx.exp).select do |name, lines|
+        variable_names(ctx.exp).select do |name, _lines|
           is_bad_name?(name, ctx)
         end.map do |name, lines|
           SmellWarning.new(SMELL_CLASS, ctx.full_name, lines,

@@ -75,7 +75,7 @@ describe CodeContext do
       end
       it 'yields one module' do
         mods = 0
-        @ctx.each_node(:module, []) { |exp| mods += 1 }
+        @ctx.each_node(:module, []) { |_exp| mods += 1 }
         expect(mods).to eq(1)
       end
       it "yields the module's full AST" do

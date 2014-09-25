@@ -51,7 +51,7 @@ module Reek
       end
 
       def has_nested_node?(target_type)
-        look_for(target_type) { |elem| return true }
+        look_for(target_type) { |_elem| return true }
         false
       end
 

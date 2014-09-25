@@ -22,7 +22,7 @@ module Reek
 
       def max_keys
         max = max_refs
-        @refs.select { |key, val| val == max }
+        @refs.select { |_key, val| val == max }
       end
 
       def self_is_max?

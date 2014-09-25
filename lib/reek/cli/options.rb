@@ -80,10 +80,10 @@ EOB
         @parser.on("-o", "--[no-]color", "Use colors for the output (this is the default)") do |opt|
           @colored = opt
         end
-        @parser.on("-q", "--quiet", "Suppress headings for smell-free source files (this is the default)") do |opt|
+        @parser.on("-q", "--quiet", "Suppress headings for smell-free source files (this is the default)") do |_opt|
           @report_class = QuietReport
         end
-        @parser.on("-V", "--no-quiet", "--verbose", "Show headings for smell-free source files") do |opt|
+        @parser.on("-V", "--no-quiet", "--verbose", "Show headings for smell-free source files") do |_opt|
           @report_class = VerboseReport
         end
         @parser.on("-n", "--no-line-numbers", "Suppress line numbers from the output") do

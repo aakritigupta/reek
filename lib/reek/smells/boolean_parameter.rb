@@ -23,9 +23,9 @@ module Reek
       # @return [Array<SmellWarning>]
       #
       def examine_context(method_ctx)
-        method_ctx.parameters.default_assignments.select do |param, value|
+        method_ctx.parameters.default_assignments.select do |_param, value|
           [:true, :false].include?(value[0])
-        end.map do |param, value|
+        end.map do |param, _value|
           param_name = param.to_s
           SmellWarning.new(SMELL_CLASS, method_ctx.full_name, [method_ctx.exp.line],
                            "has boolean parameter '#{param_name}'",
