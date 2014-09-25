@@ -17,7 +17,7 @@ module Reek
       end
 
       def max_refs
-        @refs.values.max or 0
+        @refs.values.max || 0
       end
 
       def max_keys

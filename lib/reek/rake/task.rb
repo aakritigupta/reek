@@ -94,7 +94,7 @@ module Reek
         return if source_file_list.empty?
         cmd = cmd_words.join(' ')
         puts cmd if @verbose
-        raise('Smells found!') if !system(cmd) and fail_on_error
+        raise('Smells found!') if !system(cmd) && fail_on_error
       end
 
       def self.reek_script

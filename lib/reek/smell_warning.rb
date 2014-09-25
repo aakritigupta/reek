@@ -87,7 +87,7 @@ module Reek
     end
 
     def matches?(klass, patterns)
-      @smell.values.include?(klass.to_s) and contains_all?(patterns)
+      @smell.values.include?(klass.to_s) && contains_all?(patterns)
     end
 
     def report_on(listener)

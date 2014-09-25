@@ -21,7 +21,7 @@ module Reek
       end
 
       def has_type?(type)
-        is_language_node? and first == type
+        is_language_node? && first == type
       end
 
       def each_node(type, ignoring, &blk)

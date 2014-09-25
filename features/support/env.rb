@@ -31,7 +31,7 @@ EOS
     rakefile.close
     run("rake -f #{rakefile.path} #{name}")
     lines = @last_stdout.split("\n")
-    if lines.length > 0 and lines[0] =~ /^\(/
+    if lines.length > 0 && lines[0] =~ /^\(/
       @last_stdout = lines[1..-1].join("\n")
     end
   end

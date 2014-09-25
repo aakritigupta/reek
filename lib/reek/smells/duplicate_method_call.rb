@@ -130,7 +130,7 @@ module Reek
         end
 
         def smelly_call?(found_call)
-          found_call.occurs > @max_allowed_calls and !allow_calls?(found_call.call)
+          found_call.occurs > @max_allowed_calls && !allow_calls?(found_call.call)
         end
 
         def allow_calls?(method)

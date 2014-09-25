@@ -25,12 +25,6 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Max: 7
 
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/AndOr:
-  Enabled: false
-
 # Offense count: 18
 Style/CaseEquality:
   Enabled: false
