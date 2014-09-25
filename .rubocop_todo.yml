@@ -58,11 +58,6 @@ Style/CollectionMethods:
 Style/Documentation:
   Enabled: false
 
-# Offense count: 6
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Enabled: false
-
 # Offense count: 8
 # Configuration parameters: NamePrefix, NamePrefixBlacklist.
 Style/PredicateName:

@@ -23,6 +23,10 @@ Style/DotPosition:
 Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
 
+# Enforce GaurdClause if there are 2 or more lines in the body
+Style/GuardClause:
+  MinBodyLength: 2
+
 # Allow s()
 Style/MethodCallParentheses:
   Enabled: false

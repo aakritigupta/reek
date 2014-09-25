@@ -99,10 +99,10 @@ module Reek
       end
 
       def display_total_smell_count
-        if @examiners.size > 1
-          print "\n"
-          print total_smell_count_message
-        end
+        return unless @examiners.size > 1
+
+        print "\n"
+        print total_smell_count_message
       end
 
       def total_smell_count_message

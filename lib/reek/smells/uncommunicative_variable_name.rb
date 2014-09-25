@@ -113,10 +113,9 @@ module Reek
 
       def record_variable_name(exp, symbol, accumulator)
         varname = symbol.to_s.sub(/^\*/, '')
-        if varname != ""
-          var = varname.to_sym
-          accumulator[var].push(exp.line)
-        end
+        return if varname == ""
+        var = varname.to_sym
+        accumulator[var].push(exp.line)
       end
     end
   end
