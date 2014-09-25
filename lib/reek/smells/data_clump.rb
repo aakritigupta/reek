@@ -86,8 +86,9 @@ module Reek
     def initialize(ctx, min_clump_size, max_copies)
       @min_clump_size = min_clump_size
       @max_copies = max_copies
-      @candidate_methods = ctx.local_nodes(:defn).map {|defn_node|
-        CandidateMethod.new(defn_node)}
+      @candidate_methods = ctx.local_nodes(:defn).map do |defn_node|
+        CandidateMethod.new(defn_node)
+      end
     end
 
     def candidate_clumps
