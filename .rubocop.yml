@@ -39,9 +39,7 @@ Style/MultilineBlockChain:
 Style/PerlBackrefs:
   Enabled: false
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, Whitelist.
+# Only register TrivialAccessors offenses when the name matches
 Style/TrivialAccessors:
   ExactNameMatch: true
 
