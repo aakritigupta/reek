@@ -119,7 +119,7 @@ EOB
         @reporter ||= @report_class.new(@warning_formatter, ReportFormatter, @sort_by_issue_count, @format)
       end
 
-      def get_sources
+      def sources
         if @argv.empty?
           return [$stdin.to_reek_source('$stdin')]
         else
