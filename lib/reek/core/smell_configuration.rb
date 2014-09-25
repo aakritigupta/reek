@@ -37,7 +37,7 @@ module Reek
       # Returns +fall_back+ if this config has no value for the key.
       #
       def value(key, context, fall_back)
-        overrides_for(context).each { |conf| return conf[key] if conf.has_key?(key) }
+        overrides_for(context).each { |conf| return conf[key] if conf.key?(key) }
         @options.fetch(key, fall_back)
       end
     end
