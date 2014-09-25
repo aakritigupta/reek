@@ -72,7 +72,7 @@ module Reek
           end
         when :html
           if all_smells.size > 0
-            HtmlReport.new.output(all_smells)
+            HtmlOutput.new(all_smells).output
             print("Html file saved\n")
           end
         end
@@ -146,10 +146,18 @@ module Reek
     #
     # Saves the report as a HTML file
     #
-    class HtmlReport < Report
+    class HtmlOutput
       require 'erb'
+
       TEMPLATE = File.read(File.expand_path('../../../../assets/html_output.html.erb', __FILE__))
-      def output(smells)
+
+      attr_reader :smells
+
+      def initialize(smells)
+        @smells = smells
+      end
+
+      def output
         File.open('reek.html', 'w+') do |file|
           file.puts ERB.new(TEMPLATE).result(binding)
         end

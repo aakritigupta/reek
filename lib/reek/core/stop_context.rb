@@ -8,7 +8,7 @@ module Reek
         @name = ''
       end
 
-      def method_missing(method, *args)
+      def method_missing(_method, *_args)
         nil
       end
 
@@ -16,7 +16,7 @@ module Reek
         {}
       end
 
-      def count_statements(num)
+      def count_statements(_num)
         0
       end
 
