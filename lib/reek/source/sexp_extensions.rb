@@ -78,9 +78,9 @@ module Reek
         end
 
         def parameters
-          @parameters ||= argslist[1..-1].map { |param|
+          @parameters ||= argslist[1..-1].map do |param|
             MethodParameter.new(Sexp === param ?  param[1] : param)
-          }
+          end
         end
 
         def parameter_names

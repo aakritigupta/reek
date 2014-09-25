@@ -31,11 +31,6 @@ Style/AndOr:
 Style/AsciiComments:
   Enabled: false
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/Blocks:
-  Enabled: false
-
 # Offense count: 67
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
