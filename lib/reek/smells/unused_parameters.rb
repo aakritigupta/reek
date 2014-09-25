@@ -35,7 +35,7 @@ module Reek
           "has unused parameter '#{param_name}'",
           @source,
           SMELL_SUBCLASS,
-          { PARAMETER_KEY => param_name }
+          PARAMETER_KEY => param_name
         )
       end
     end

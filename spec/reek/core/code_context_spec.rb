@@ -156,7 +156,7 @@ EOS
     end
 
     it 'gets its configuration from the exp comments' do
-      expect(ctx.config_for(sniffer)).to eq({ 'allow_calls' => ['puts'] })
+      expect(ctx.config_for(sniffer)).to eq('allow_calls' => ['puts'])
     end
 
     context 'when there is an outer' do
@@ -164,12 +164,12 @@ EOS
 
       before :each do
         allow(outer).to receive(:config_for).with(sniffer).and_return(
-          { 'max_calls' => 2 })
+          'max_calls' => 2)
       end
 
       it 'merges the outer config with its own configuration' do
-        expect(ctx.config_for(sniffer)).to eq({ 'allow_calls' => ['puts'],
-                                            'max_calls' => 2 })
+        expect(ctx.config_for(sniffer)).to eq('allow_calls' => ['puts'],
+                                            'max_calls' => 2)
       end
     end
   end
