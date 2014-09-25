@@ -85,8 +85,9 @@ module Reek
       private
 
       def all_smells
-        @all_smells ||= @examiners.each_with_object([]) { |examiner, smells| smells << examiner.smells }
-                                  .flatten
+        @all_smells ||= @examiners.
+          each_with_object([]) { |examiner, smells| smells << examiner.smells }.
+          flatten
       end
 
       def sort_examiners

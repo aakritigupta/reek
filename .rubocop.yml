@@ -15,6 +15,10 @@ Style/SingleLineMethods:
 Style/SignalException:
   EnforcedStyle: only_raise
 
+# Place . on the previous line
+Style/DotPosition:
+  EnforcedStyle: trailing
+
 # Require empty lines between defs, except for one-line defs
 Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true

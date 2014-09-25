@@ -82,12 +82,6 @@ Style/CollectionMethods:
 Style/Documentation:
   Enabled: false
 
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/DotPosition:
-  Enabled: false
-
 # Offense count: 6
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
