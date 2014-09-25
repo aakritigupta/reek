@@ -85,11 +85,6 @@ Style/MethodLength:
 Style/MultilineBlockChain:
   Enabled: false
 
-# Offense count: 3
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/Next:
-  Enabled: false
-
 # Offense count: 1
 # Configuration parameters: CountKeywordArgs.
 Style/ParameterLists:
