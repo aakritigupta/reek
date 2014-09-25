@@ -110,8 +110,8 @@ module Reek
             ruby_options +
             [%("#{Task.reek_script}")] +
             [sort_option] +
-            config_file_list.collect { |fn| ['-c', %("#{fn}")] }.flatten +
-            source_file_list.collect { |fn| %("#{fn}") }
+            config_file_list.map { |fn| ['-c', %("#{fn}")] }.flatten +
+            source_file_list.map { |fn| %("#{fn}") }
       end
 
       def config_file_list

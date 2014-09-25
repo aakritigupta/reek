@@ -34,7 +34,7 @@ module Reek
         ctx.node_instance_methods.map do |method_sexp|
           next unless method_sexp.ends_with_bang?
 
-          version_without_bang = ctx.node_instance_methods.detect do |sexp_item|
+          version_without_bang = ctx.node_instance_methods.find do |sexp_item|
             sexp_item.name.to_s == method_sexp.name_without_bang
           end
           next if version_without_bang

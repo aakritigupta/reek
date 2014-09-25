@@ -99,7 +99,7 @@ module Reek
     end
 
     def common_argument_names_for(methods)
-      methods.collect(&:arg_names).inject(:&)
+      methods.map(&:arg_names).inject(:&)
     end
 
     def methods_containing_clump(clump)

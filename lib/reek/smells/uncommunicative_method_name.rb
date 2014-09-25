@@ -57,7 +57,7 @@ module Reek
         return [] if @accept_names.include?(ctx.full_name)
         var = name.gsub(/^[@\*\&]*/, '')
         return [] if @accept_names.include?(var)
-        return [] unless @reject_names.detect { |patt| patt =~ var }
+        return [] unless @reject_names.find { |patt| patt =~ var }
         smell = SmellWarning.new('UncommunicativeName', ctx.full_name, [ctx.exp.line],
                                  "has the name '#{name}'",
                                  @source, 'UncommunicativeMethodName', METHOD_NAME_KEY => name)
