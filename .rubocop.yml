@@ -39,4 +39,10 @@ Style/MultilineBlockChain:
 Style/PerlBackrefs:
   Enabled: false
 
+# Offense count: 5
+# Cop supports --auto-correct.
+# Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, Whitelist.
+Style/TrivialAccessors:
+  ExactNameMatch: true
+
 inherit_from: .rubocop_todo.yml
