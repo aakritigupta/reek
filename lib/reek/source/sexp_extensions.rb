@@ -70,7 +70,7 @@ module Reek
 
       module MethodNode
         def arguments
-          @arguments ||= parameters.reject { |param| param.block? }
+          @arguments ||= parameters.reject(&:block?)
         end
 
         def arg_names
