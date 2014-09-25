@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # Feature Envy occurs when a code fragment references another object
     # more often than it references itself, or when several clients do

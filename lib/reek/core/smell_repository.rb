@@ -6,7 +6,6 @@ module Reek
     # Contains all the existing smells and exposes operations on them.
     #
     class SmellRepository
-
       def self.smell_classes
         # SMELL: Duplication -- these should be loaded by listing the files
         [

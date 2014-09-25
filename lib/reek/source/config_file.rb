@@ -3,13 +3,11 @@ require 'reek/config_file_exception'
 
 module Reek
   module Source
-
     #
     # A file called <something>.reek containing configuration settings for
     # any or all of the smell detectors.
     #
     class ConfigFile
-
       #
       # Load the YAML config file from the supplied +file_path+.
       #

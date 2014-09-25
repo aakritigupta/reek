@@ -2,7 +2,6 @@ require 'reek/examiner'
 
 module Reek
   module Spec
-
     #
     # An rspec matcher that matches when the +actual+ has the specified
     # code smell.

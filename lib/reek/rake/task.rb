@@ -4,14 +4,12 @@ require 'rake'
 require 'rake/tasklib'
 
 module Reek
-
   #
   # Defines a task library for running reek.
   # (Classes here will be configured via the Rakefile, and therefore will
   # possess a :reek:attribute or two.)
   #
   module Rake
-
     # A Rake task that runs reek on a set of source files.
     #
     # Example:
@@ -33,7 +31,6 @@ module Reek
     #   rake reek REEK_OPTS=-s                   # sorts the report by smell
     #
     class Task < ::Rake::TaskLib
-
       # Name of reek task.
       # Defaults to :reek.
       attr_accessor :name

@@ -4,7 +4,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # Class variables form part of the global runtime state, and as such make
     # it easy for one part of the system to accidentally or inadvertently
@@ -14,7 +13,6 @@ module Reek
     # the context of the test includes all global state).
     #
     class ClassVariable < SmellDetector
-
       SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
 

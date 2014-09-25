@@ -1,6 +1,5 @@
 module Reek
   module Cli
-
     #
     # Base class for all commands
     #

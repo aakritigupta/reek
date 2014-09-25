@@ -4,7 +4,6 @@ require 'reek/core/smell_configuration'
 
 module Reek
   module Smells
-
     module ExcludeInitialize
       def self.default_config
         super.merge(EXCLUDE_KEY => ['initialize'])
@@ -15,7 +14,6 @@ module Reek
     # Shared responsibilities of all smell detectors.
     #
     class SmellDetector
-
       # The name of the config field that lists the names of code contexts
       # that should not be checked. Add this field to the config for each
       # smell that should ignore this code element.

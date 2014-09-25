@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # An Uncommunicative Name is a name that doesn't communicate its intent
     # well enough.
@@ -18,7 +17,6 @@ module Reek
     # * names ending with a number
     #
     class UncommunicativeModuleName < SmellDetector
-
       SMELL_CLASS = 'UncommunicativeName'
       SMELL_SUBCLASS = name.split(/::/)[-1]
       MODULE_NAME_KEY = 'module_name'

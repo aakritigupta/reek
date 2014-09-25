@@ -6,7 +6,6 @@ require 'reek/core/singleton_method_context'
 
 module Reek
   module Core
-
     #
     # Traverses a Sexp abstract syntax tree and fires events whenever
     # it encounters specific node types.

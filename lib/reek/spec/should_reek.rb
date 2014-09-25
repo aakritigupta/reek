@@ -3,7 +3,6 @@ require 'reek/cli/report'
 
 module Reek
   module Spec
-
     #
     # An rspec matcher that matches when the +actual+ has code smells.
     #

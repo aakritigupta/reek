@@ -2,14 +2,12 @@ require 'reek/cli/options'
 
 module Reek
   module Cli
-
     #
     # Represents an instance of a Reek application.
     # This is the entry point for all invocations of Reek from the
     # command line.
     #
     class Application
-
       STATUS_SUCCESS = 0
       STATUS_ERROR   = 1
       STATUS_SMELLS  = 2

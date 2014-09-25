@@ -3,13 +3,11 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # A variant on LongParameterList that checks the number of items
     # passed to a block by a +yield+ call.
     #
     class LongYieldList < SmellDetector
-
       SMELL_CLASS = 'LongParameterList'
       SMELL_SUBCLASS = name.split(/::/)[-1]
 

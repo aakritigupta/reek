@@ -4,12 +4,10 @@ require 'reek/source/tree_dresser'
 
 module Reek
   module Source
-
     #
     # A +Source+ object represents a chunk of Ruby source code.
     #
     class SourceCode
-
       @@err_io = $stderr
 
       class << self

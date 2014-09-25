@@ -4,7 +4,6 @@ require 'reek/source'
 
 module Reek
   module Smells
-
     #
     # A Data Clump occurs when the same two or three items frequently
     # appear together in classes and parameter lists, or when a group
@@ -18,7 +17,6 @@ module Reek
     # the same names that are expected by three or more methods of a class.
     #
     class DataClump < SmellDetector
-
       SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = name.split(/::/)[-1]
 
@@ -85,7 +83,6 @@ module Reek
   # Represents a group of methods
   # @private
   class MethodGroup
-
     def initialize(ctx, min_clump_size, max_copies)
       @min_clump_size = min_clump_size
       @max_copies = max_copies

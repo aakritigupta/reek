@@ -4,7 +4,6 @@ require 'reek/core/smell_configuration'
 
 module Reek
   module Smells
-
     #
     # A class that publishes a getter or setter for an instance variable
     # invites client classes to become too intimate with its inner workings,
@@ -19,7 +18,6 @@ module Reek
     # * catch attributes declared "by hand"
     #
     class Attribute < SmellDetector
-
       SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
 

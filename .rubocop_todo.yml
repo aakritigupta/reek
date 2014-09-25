@@ -146,11 +146,6 @@ Style/EmptyLineBetweenDefs:
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 
-# Offense count: 96
-# Cop supports --auto-correct.
-Style/EmptyLinesAroundBody:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/EmptyLiteral:

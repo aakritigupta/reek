@@ -3,7 +3,6 @@ require 'reek/core/object_refs'
 
 module Reek
   module Core
-
     #
     # The parameters in a method's definition.
     #

@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # Control Coupling occurs when a method or block checks the value of
     # a parameter in order to decide which execution path to take. The
@@ -42,7 +41,6 @@ module Reek
     # the source code.
     #
     class ControlParameter < SmellDetector
-
       SMELL_CLASS = 'ControlCouple'
       SMELL_SUBCLASS = name.split(/::/)[-1]
       PARAMETER_KEY = 'parameter'

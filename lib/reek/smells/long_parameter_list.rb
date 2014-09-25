@@ -4,7 +4,6 @@ require 'reek/core/smell_configuration'
 
 module Reek
   module Smells
-
     #
     # A Long Parameter List occurs when a method has more than one
     # or two parameters, or when a method yields more than one or
@@ -14,7 +13,6 @@ module Reek
     # many parameters.
     #
     class LongParameterList < SmellDetector
-
       SMELL_CLASS = 'LongParameterList'
       SMELL_SUBCLASS = name.split(/::/)[-1]
 

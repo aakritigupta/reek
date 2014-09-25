@@ -1,7 +1,6 @@
 
 module Reek
   module Core
-
     #
     # Superclass for all types of source code context. Each instance represents
     # a code element of some kind, and each provides behaviour relevant to that
@@ -9,7 +8,6 @@ module Reek
     # with each context holding a reference to a unique outer context.
     #
     class CodeContext
-
       attr_reader :exp
 
       def initialize(outer, exp)

@@ -3,14 +3,12 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # A Nested Iterator occurs when a block contains another block.
     #
     # +NestedIterators+ reports failing methods only once.
     #
     class NestedIterators < SmellDetector
-
       SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
       # SMELL: should be a subclass of UnnecessaryComplexity

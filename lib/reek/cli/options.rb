@@ -8,12 +8,10 @@ require 'reek/source'
 
 module Reek
   module Cli
-
     #
     # Parses the command line
     #
     class Options
-
       def initialize(argv)
         @argv = argv
         @parser = OptionParser.new

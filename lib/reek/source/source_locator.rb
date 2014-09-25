@@ -2,7 +2,6 @@ require 'reek/source/core_extras'
 
 module Reek
   module Source
-
     #
     # Finds Ruby source files in a filesystem.
     #

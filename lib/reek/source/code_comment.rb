@@ -1,7 +1,6 @@
 
 module Reek
   module Source
-
     #
     # A comment header from an abstract syntax tree; found directly above
     # module, class and method definitions.

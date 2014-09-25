@@ -4,7 +4,6 @@ require 'reek/source/reference_collector'
 
 module Reek
   module Smells
-
     #
     # A Utility Function is any instance method that has no
     # dependency on the state of the instance.
@@ -34,7 +33,6 @@ module Reek
     # likely belong there.
     #
     class UtilityFunction < SmellDetector
-
       SMELL_SUBCLASS = name.split(/::/)[-1]
       SMELL_CLASS = 'LowCohesion'
 

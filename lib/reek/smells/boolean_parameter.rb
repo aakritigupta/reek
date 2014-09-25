@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # A Boolean parameter effectively permits a method's caller
     # to decide which execution path to take. The
@@ -13,7 +12,6 @@ module Reek
     # default initializer.
     #
     class BooleanParameter < SmellDetector
-
       SMELL_CLASS = 'ControlCouple'
       SMELL_SUBCLASS = name.split(/::/)[-1]
 

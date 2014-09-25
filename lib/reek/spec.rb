@@ -3,7 +3,6 @@ require 'reek/spec/should_reek_of'
 require 'reek/spec/should_reek_only_of'
 
 module Reek
-
   #
   # Provides matchers for Rspec, making it easy to check code quality.
   #

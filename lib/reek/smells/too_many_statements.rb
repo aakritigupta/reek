@@ -3,14 +3,12 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # A Long Method is any method that has a large number of lines.
     #
     # +TooManyStatements+ reports any method with more than 5 statements.
     #
     class TooManyStatements < SmellDetector
-
       SMELL_CLASS = 'LongMethod'
       SMELL_SUBCLASS = name.split(/::/)[-1]
 

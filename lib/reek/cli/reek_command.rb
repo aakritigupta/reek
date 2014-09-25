@@ -3,7 +3,6 @@ require 'reek/examiner'
 
 module Reek
   module Cli
-
     #
     # A command to collect smells from a set of sources and write them out in
     # text report format.

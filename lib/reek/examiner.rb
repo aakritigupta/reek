@@ -3,12 +3,10 @@ require 'reek/core/warning_collector'
 require 'reek/source/source_repository'
 
 module Reek
-
   #
   # Finds the active code smells in Ruby source code.
   #
   class Examiner
-
     #
     # A simple description of the source being analysed for smells.
     # If the source is a single File, this will be the file's path.

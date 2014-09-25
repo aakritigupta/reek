@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # Duplication occurs when two fragments of code look nearly identical,
     # or when two fragments of code have nearly identical effects

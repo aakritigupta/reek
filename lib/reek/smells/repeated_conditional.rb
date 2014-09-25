@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # Simulated Polymorphism occurs when
     # * code uses a case statement (especially on a type field);
@@ -22,7 +21,6 @@ module Reek
     # testing the same value throughout a single class.
     #
     class RepeatedConditional < SmellDetector
-
       SMELL_CLASS = 'SimulatedPolymorphism'
       SMELL_SUBCLASS = name.split(/::/)[-1]
 

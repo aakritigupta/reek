@@ -3,7 +3,6 @@ require 'reek/smell_warning'
 
 module Reek
   module Smells
-
     #
     # A Large Class is a class or module that has a large number of
     # instance variables, methods or lines of code.
@@ -14,7 +13,6 @@ module Reek
     # modules.
     #
     class TooManyMethods < SmellDetector
-
       SMELL_CLASS = 'LargeClass'
       SMELL_SUBCLASS = name.split(/::/)[-1]
       METHOD_COUNT_KEY = 'method_count'

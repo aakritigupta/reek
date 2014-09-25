@@ -4,13 +4,11 @@ require 'reek/source/code_comment'
 
 module Reek
   module Smells
-
     #
     # It is considered good practice to annotate every class and module
     # with a brief comment outlining its responsibilities.
     #
     class IrresponsibleModule < SmellDetector
-
       SMELL_CLASS = name.split(/::/)[-1]
       SMELL_SUBCLASS = SMELL_CLASS
 

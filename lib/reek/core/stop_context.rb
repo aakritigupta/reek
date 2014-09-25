@@ -1,11 +1,9 @@
 module Reek
   module Core
-
     #
     # A context wrapper representing the root of an abstract syntax tree.
     #
     class StopContext
-
       def initialize
         @name = ''
       end
