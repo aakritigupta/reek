@@ -57,10 +57,6 @@ Style/ClassLength:
 Style/CollectionMethods:
   Enabled: false
 
-# Offense count: 3
-Style/ConstantName:
-  Enabled: false
-
 # Offense count: 31
 Style/Documentation:
   Enabled: false

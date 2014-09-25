@@ -19,7 +19,7 @@ module Reek
         @report_class = QuietReport
         @warning_formatter = WarningFormatterWithLineNumbers
         @command_class = ReekCommand
-        @format = Report::DefaultFormat
+        @format = Report::DEFAULT_FORMAT
         @config_files = []
         @sort_by_issue_count = false
         @smells_to_detect = []

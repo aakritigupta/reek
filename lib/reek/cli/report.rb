@@ -39,11 +39,11 @@ module Reek
     # A report that contains the smells and smell counts following source code analysis.
     #
     class Report
-      DefaultFormat = :text
-      NoWarningsColor = :green
-      WarningsColor = :red
+      DEFAULT_FORMAT = :text
+      NO_WARNINGS_COLOR = :green
+      WARNINGS_COLOR = :red
 
-      def initialize(warning_formatter = SimpleWarningFormatter, report_formatter = ReportFormatter, sort_by_issue_count = false, format = DefaultFormat)
+      def initialize(warning_formatter = SimpleWarningFormatter, report_formatter = ReportFormatter, sort_by_issue_count = false, format = DEFAULT_FORMAT)
         @warning_formatter   = warning_formatter
         @report_formatter    = report_formatter
         @examiners           = []
@@ -60,7 +60,7 @@ module Reek
 
       def show
         case @format
-        when DefaultFormat
+        when DEFAULT_FORMAT
           sort_examiners
           display_summary
           display_total_smell_count
@@ -105,7 +105,7 @@ module Reek
       end
 
       def total_smell_count_message
-        colour = has_smells? ? WarningsColor : NoWarningsColor
+        colour = has_smells? ? WARNINGS_COLOR : NO_WARNINGS_COLOR
         Rainbow("#{@total_smell_count} total warning#{'s' unless @total_smell_count == 1 }\n").color(colour)
       end
 
