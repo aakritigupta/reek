@@ -62,7 +62,7 @@ module Reek
     # True if and only if there are code smells in the source.
     #
     def smelly?
-      not @smells.empty?
+      !@smells.empty?
     end
 
     #
