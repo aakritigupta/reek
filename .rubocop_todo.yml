@@ -28,9 +28,3 @@ Metrics/ParameterLists:
 # Offense count: 31
 Style/Documentation:
   Enabled: false
-
-# Offense count: 172
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false

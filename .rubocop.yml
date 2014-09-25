@@ -39,6 +39,10 @@ Style/MultilineBlockChain:
 Style/PerlBackrefs:
   Enabled: false
 
+# TODO: Enable this offense once consensus is reached
+Style/StringLiterals:
+  Enabled: false
+
 # Only register TrivialAccessors offenses when the name matches
 Style/TrivialAccessors:
   ExactNameMatch: true
