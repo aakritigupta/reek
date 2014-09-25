@@ -32,9 +32,9 @@ describe SmellConfiguration do
 
     it 'should override arrays of values' do
       expect(@smell_config.merge!("reject" => [/^.$/, /[3-9]$/])).to eq("enabled" => true,
-                                                          "exclude" => [],
-                                                          "reject" => [/^.$/, /[3-9]$/],
-                                                          "accept" => ["_"])
+                                                                        "exclude" => [],
+                                                                        "reject" => [/^.$/, /[3-9]$/],
+                                                                        "accept" => ["_"])
     end
 
     it 'should override multiple values' do

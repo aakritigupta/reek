@@ -65,9 +65,10 @@ module Reek
           SmellWarning.new(SMELL_CLASS, ctx.full_name,
                            methods.map(&:line),
                            "takes parameters #{DataClump.print_clump(clump)} to #{methods.length} methods",
-                           @source, SMELL_SUBCLASS, PARAMETERS_KEY => clump.map(&:to_s),
-                             OCCURRENCES_KEY => methods.length,
-                             METHODS_KEY => methods.map(&:name))
+                           @source, SMELL_SUBCLASS,
+                           PARAMETERS_KEY => clump.map(&:to_s),
+                           OCCURRENCES_KEY => methods.length,
+                           METHODS_KEY => methods.map(&:name))
         end
       end
 

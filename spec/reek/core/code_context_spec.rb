@@ -169,7 +169,7 @@ EOS
 
       it 'merges the outer config with its own configuration' do
         expect(ctx.config_for(sniffer)).to eq('allow_calls' => ['puts'],
-                                            'max_calls' => 2)
+                                              'max_calls' => 2)
       end
     end
   end
