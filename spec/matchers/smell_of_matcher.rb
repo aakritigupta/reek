@@ -66,10 +66,10 @@ module SmellOfMatcher
       @expected_smells.zip(@actual_smells).each do |expected_smell, actual_smell|
         expected_smell.each do |key, value|
           actual_value = actual_smell.smell[key]
-          if actual_value != value
-            @reason = "expected #{key} to be #{value}, was #{actual_value}"
-            return true
-          end
+          next if actual_value == value
+
+          @reason = "expected #{key} to be #{value}, was #{actual_value}"
+          return true
         end
       end
       false

@@ -29,11 +29,16 @@ module Reek
 
       def examine_context(ctx)
         ctx.node_instance_methods.map do |method_sexp|
-          if method_sexp.ends_with_bang?
-            SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
-                             "has prima donna method `#{method_sexp.name}`",
-                             @source, SMELL_SUBCLASS) unless ctx.node_instance_methods.detect { |sexp_item| sexp_item.name.to_s == method_sexp.name_without_bang }
+          next unless method_sexp.ends_with_bang?
+
+          version_without_bang = ctx.node_instance_methods.detect do |sexp_item|
+            sexp_item.name.to_s == method_sexp.name_without_bang
           end
+          next if version_without_bang
+
+          SmellWarning.new(SMELL_CLASS, ctx.full_name, [ctx.exp.line],
+                           "has prima donna method `#{method_sexp.name}`",
+                           @source, SMELL_SUBCLASS)
         end.compact
       end
     end

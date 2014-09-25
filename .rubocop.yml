@@ -39,9 +39,4 @@ Style/MultilineBlockChain:
 Style/PerlBackrefs:
   Enabled: false
 
-# Following this cop's advice does not yield better-looking code. See
-# https://github.com/bbatsov/rubocop/issues/1238
-Style/Next:
-  Enabled: false
-
 inherit_from: .rubocop_todo.yml
