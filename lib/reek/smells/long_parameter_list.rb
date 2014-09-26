@@ -30,7 +30,7 @@ module Reek
         super.merge(
           MAX_ALLOWED_PARAMS_KEY => DEFAULT_MAX_ALLOWED_PARAMS,
           Core::SmellConfiguration::OVERRIDES_KEY => {
-            "initialize" => { MAX_ALLOWED_PARAMS_KEY => 5 }
+            'initialize' => { MAX_ALLOWED_PARAMS_KEY => 5 }
           }
         )
       end

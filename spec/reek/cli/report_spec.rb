@@ -7,7 +7,7 @@ require 'stringio'
 include Reek
 include Reek::Cli
 
-describe QuietReport, " when empty" do
+describe QuietReport, ' when empty' do
   context 'empty source' do
     it 'has an empty quiet_report' do
       examiner = Examiner.new('')

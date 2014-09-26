@@ -45,7 +45,7 @@ Then /^stderr reports:$/ do |report|
 end
 
 Then /^it reports no errors$/ do
-  expect(@last_stderr.chomp).to eq ""
+  expect(@last_stderr.chomp).to eq ''
 end
 
 Then /^it reports an error$/ do

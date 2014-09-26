@@ -15,7 +15,7 @@ describe UncommunicativeVariableName do
 
   it_should_behave_like 'SmellDetector'
 
-  context "field name" do
+  context 'field name' do
     it 'does not report use of one-letter fieldname' do
       src = 'class Thing; def simple(fred) @x end end'
       expect(src).not_to smell_of(UncommunicativeVariableName)
@@ -26,7 +26,7 @@ describe UncommunicativeVariableName do
     end
   end
 
-  context "local variable name" do
+  context 'local variable name' do
     it 'does not report one-word variable name' do
       expect('def help(fred) simple = jim(45) end').not_to smell_of(UncommunicativeVariableName)
     end
@@ -68,8 +68,8 @@ describe UncommunicativeVariableName do
     end
   end
 
-  context "block parameter name" do
-    it "reports deep block parameter" do
+  context 'block parameter name' do
+    it 'reports deep block parameter' do
       src = <<EOS
   def bad
     unless @mod then
@@ -81,7 +81,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'x')
     end
 
-    it "reports all relevant block parameters" do
+    it 'reports all relevant block parameters' do
       src = <<-EOS
         def bad
           @foo.map { |x, y| x + y }
@@ -92,7 +92,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'y')
     end
 
-    it "reports block parameters used outside of methods" do
+    it 'reports block parameters used outside of methods' do
       src = <<-EOS
       class Foo
         @foo.map { |x| x * 2 }
@@ -102,7 +102,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'x')
     end
 
-    it "reports splatted block parameters correctly" do
+    it 'reports splatted block parameters correctly' do
       src = <<-EOS
         def bad
           @foo.map { |*y| y << 1 }
@@ -112,7 +112,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'y')
     end
 
-    it "reports nested block parameters" do
+    it 'reports nested block parameters' do
       src = <<-EOS
         def bad
           @foo.map { |(x, y)| x + y }
@@ -123,7 +123,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'y')
     end
 
-    it "reports splatted nested block parameters" do
+    it 'reports splatted nested block parameters' do
       src = <<-EOS
         def bad
           @foo.map { |(x, *y)| x + y }
@@ -134,7 +134,7 @@ EOS
                               UncommunicativeVariableName::VARIABLE_NAME_KEY => 'y')
     end
 
-    it "reports deeply nested block parameters" do
+    it 'reports deeply nested block parameters' do
       src = <<-EOS
         def bad
           @foo.map { |(x, (y, z))| x + y + z }

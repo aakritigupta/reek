@@ -28,7 +28,7 @@ describe UncommunicativeParameterName do
                                 UncommunicativeParameterName::PARAMETER_NAME_KEY => 'x')
       end
 
-      it "does not report unused parameters" do
+      it 'does not report unused parameters' do
         src = "def #{host}help(x) basics(17) end"
         expect(src).not_to smell_of(UncommunicativeParameterName)
       end

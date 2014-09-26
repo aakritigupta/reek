@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-$LOAD_PATH.push File.join(File.dirname(__FILE__), "lib")
+$LOAD_PATH.push File.join(File.dirname(__FILE__), 'lib')
 require 'reek/version'
 
 Gem::Specification.new do |s|
@@ -14,30 +14,30 @@ Gem::Specification.new do |s|
   DESC
 
   s.license = 'MIT'
-  s.email = ["timo.roessner@googlemail.com"]
-  s.executables = ["reek"]
-  s.extra_rdoc_files = ["CHANGELOG", "License.txt"]
-  s.files = Dir[".yardopts", "CHANGELOG", "License.txt", "README.md",
-                "Rakefile", "assets/html_output.html.erb", "bin/reek", "config/defaults.reek",
-                "{features,lib,spec,tasks}/**/*",
-                "reek.gemspec"] & `git ls-files -z`.split("\0")
+  s.email = ['timo.roessner@googlemail.com']
+  s.executables = ['reek']
+  s.extra_rdoc_files = ['CHANGELOG', 'License.txt']
+  s.files = Dir['.yardopts', 'CHANGELOG', 'License.txt', 'README.md',
+                'Rakefile', 'assets/html_output.html.erb', 'bin/reek', 'config/defaults.reek',
+                '{features,lib,spec,tasks}/**/*',
+                'reek.gemspec'] & `git ls-files -z`.split("\0")
   s.homepage = 'http://wiki.github.com/troessner/reek'
-  s.rdoc_options = ["--main", "README.md"]
-  s.require_paths = ["lib"]
+  s.rdoc_options = ['--main', 'README.md']
+  s.require_paths = ['lib']
   s.rubyforge_project = 'reek'
   s.rubygems_version = '1.3.6'
   s.required_ruby_version = '>= 1.9.2'
   s.summary = 'Code smell detector for Ruby'
 
-  s.add_runtime_dependency('ruby_parser', [">= 3.5.0", "< 4.0"])
-  s.add_runtime_dependency('sexp_processor', ["~> 4.4"])
-  s.add_runtime_dependency('ruby2ruby', [">= 2.0.8", "< 3.0"])
-  s.add_runtime_dependency('rainbow', [">= 1.99", "< 3.0"])
+  s.add_runtime_dependency('ruby_parser', ['>= 3.5.0', '< 4.0'])
+  s.add_runtime_dependency('sexp_processor', ['~> 4.4'])
+  s.add_runtime_dependency('ruby2ruby', ['>= 2.0.8', '< 3.0'])
+  s.add_runtime_dependency('rainbow', ['>= 1.99', '< 3.0'])
 
-  s.add_development_dependency('bundler', ["~> 1.1"])
-  s.add_development_dependency('rake', ["~> 10.0"])
-  s.add_development_dependency('cucumber', ["~> 1.3"])
-  s.add_development_dependency('rspec', ["~> 3.0"])
-  s.add_development_dependency('flay', ["~> 2.4"])
-  s.add_development_dependency('yard', [">= 0.8.7", "< 0.9"])
+  s.add_development_dependency('bundler', ['~> 1.1'])
+  s.add_development_dependency('rake', ['~> 10.0'])
+  s.add_development_dependency('cucumber', ['~> 1.3'])
+  s.add_development_dependency('rspec', ['~> 3.0'])
+  s.add_development_dependency('flay', ['~> 2.4'])
+  s.add_development_dependency('yard', ['>= 0.8.7', '< 0.9'])
 end

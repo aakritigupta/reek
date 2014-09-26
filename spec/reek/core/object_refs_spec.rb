@@ -14,7 +14,7 @@ describe ObjectRefs do
     end
   end
 
-  context "with references to a, b, and a" do
+  context 'with references to a, b, and a' do
     context 'with no refs to self' do
       before(:each) do
         @refs.record_reference_to('a')
@@ -34,7 +34,7 @@ describe ObjectRefs do
         expect(@refs.self_is_max?).to eq(false)
       end
 
-      context "with one reference to self" do
+      context 'with one reference to self' do
         before(:each) do
           @refs.record_reference_to(:self)
         end

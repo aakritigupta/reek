@@ -37,7 +37,7 @@ EOS
     end
   end
 
-  context "with repeated method calls" do
+  context 'with repeated method calls' do
     it 'reports repeated call' do
       src = 'def double_thing() @other.thing + @other.thing end'
       expect(src).to smell_of(DuplicateMethodCall, DuplicateMethodCall::CALL_KEY => '@other.thing')
@@ -61,7 +61,7 @@ EOS
     end
   end
 
-  context "with repeated simple method calls" do
+  context 'with repeated simple method calls' do
     it 'reports no smell' do
       src = <<-EOS
         def foo
@@ -77,7 +77,7 @@ EOS
     end
   end
 
-  context "with repeated simple method calls with blocks" do
+  context 'with repeated simple method calls with blocks' do
     it 'reports a smell if the blocks are identical' do
       src = <<-EOS
         def foo
@@ -99,7 +99,7 @@ EOS
     end
   end
 
-  context "with repeated method calls with receivers with blocks" do
+  context 'with repeated method calls with receivers with blocks' do
     it 'reports a smell if the blocks are identical' do
       src = <<-EOS
         def foo
@@ -137,7 +137,7 @@ EOS
     end
   end
 
-  context "non-repeated method calls" do
+  context 'non-repeated method calls' do
     it 'should not report similar calls' do
       src = 'def equals(other) other.thing == self.thing end'
       expect(src).not_to smell_of(DuplicateMethodCall)
@@ -148,7 +148,7 @@ EOS
     end
   end
 
-  context "allowing up to 3 calls" do
+  context 'allowing up to 3 calls' do
     before :each do
       @config = { DuplicateMethodCall::MAX_ALLOWED_CALLS_KEY => 3 }
     end
@@ -166,7 +166,7 @@ EOS
     end
   end
 
-  context "allowing calls to some methods" do
+  context 'allowing calls to some methods' do
     before :each do
       @config = { DuplicateMethodCall::ALLOW_CALLS_KEY => ['@some.thing', /puts/] }
     end

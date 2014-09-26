@@ -33,13 +33,13 @@ describe CodeComment do
 
   context 'comment config' do
     it 'parses hashed options' do
-      config = CodeComment.new("# :reek:Duplication: { enabled: false }").config
+      config = CodeComment.new('# :reek:Duplication: { enabled: false }').config
       expect(config).to include('Duplication')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
     end
     it 'parses hashed options with ruby names' do
-      config = CodeComment.new("# :reek:nested_iterators: { enabled: true }").config
+      config = CodeComment.new('# :reek:nested_iterators: { enabled: true }').config
       expect(config).to include('NestedIterators')
       expect(config['NestedIterators']).to include('enabled')
       expect(config['NestedIterators']['enabled']).to be_truthy
@@ -53,7 +53,7 @@ describe CodeComment do
       expect(config['NestedIterators']['enabled']).to be_truthy
     end
     it 'parses multiple hashed options on the same line' do
-      config = CodeComment.new("# :reek:Duplication: { enabled: false } and :reek:nested_iterators: { enabled: true }").config
+      config = CodeComment.new('# :reek:Duplication: { enabled: false } and :reek:nested_iterators: { enabled: true }').config
       expect(config).to include('Duplication', 'NestedIterators')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
@@ -61,7 +61,7 @@ describe CodeComment do
       expect(config['NestedIterators']['enabled']).to be_truthy
     end
     it 'parses multiple unhashed options on the same line' do
-      config = CodeComment.new("# :reek:Duplication and :reek:nested_iterators").config
+      config = CodeComment.new('# :reek:Duplication and :reek:nested_iterators').config
       expect(config).to include('Duplication', 'NestedIterators')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
@@ -69,13 +69,13 @@ describe CodeComment do
       expect(config['NestedIterators']['enabled']).to be_falsey
     end
     it 'disables the smell if no options are specifed' do
-      config = CodeComment.new("# :reek:Duplication").config
+      config = CodeComment.new('# :reek:Duplication').config
       expect(config).to include('Duplication')
       expect(config['Duplication']).to include('enabled')
       expect(config['Duplication']['enabled']).to be_falsey
     end
     it 'ignores smells after a space' do
-      config = CodeComment.new("# :reek: Duplication").config
+      config = CodeComment.new('# :reek: Duplication').config
       expect(config).not_to include('Duplication')
     end
   end
