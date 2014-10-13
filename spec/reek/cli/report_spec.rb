@@ -23,11 +23,6 @@ def report_options
     }
 end
 
-describe Report, ' when incorrect options' do
-  it 'Raises error when format is not supported' do
-  end
-end
-
 describe QuietReport, " when empty" do
   context 'empty source' do
     let(:examiner) { Examiner.new('') }
@@ -58,13 +53,8 @@ describe QuietReport, " when empty" do
     context 'when output format is yaml' do
       it 'prints empty yaml' do
         yaml_report = report(QuietReport.new(report_options.merge(format: :yaml)))
-
         output = capture_output_stream { yaml_report.show }
-
-        # Regexp should match expected output for ruby versions 1.9.2 through latest
-        # In ruby 1.9.2 yaml will be: --- []\n
-        # So additionally, checking for length to ensure that the yaml has the least length for a valid yaml
-        output.match(/^--- \[\].*$/) && (output.length <= "--- []\n".length)
+        expect(output).to match /^--- \[\]\n.*$/
       end
     end
 
