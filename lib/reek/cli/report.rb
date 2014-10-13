@@ -80,7 +80,7 @@ module Reek
       end
 
       def as_html
-        HtmlReport.new.output(all_smells)
+        HtmlReport.new(all_smells).output
         print("Html file saved\n")
       end
 
@@ -160,8 +160,16 @@ module Reek
     #
     class HtmlReport < Report
       require 'erb'
+
       TEMPLATE = File.read(File.expand_path('../../../../assets/html_output.html.erb', __FILE__))
-      def output(smells)
+
+      attr_reader:smells
+
+      def initialize(smells)
+        @smells = smells
+      end
+
+      def output
         File.open('reek.html', 'w+') do |file|
           file.puts ERB.new(TEMPLATE).result(binding)
         end

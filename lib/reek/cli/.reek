@@ -1,5 +1,0 @@
----
-UnusedParameters:
-  enabled: true
-  exclude:
-  - Reek::Cli::HtmlReport#output

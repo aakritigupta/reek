@@ -39,7 +39,7 @@ describe QuietReport, " when empty" do
 
     context 'when output format is html' do
       it 'has the text 0 total warnings' do
-        html_report = report(HtmlReport.new(report_options.merge(format: :html)))
+        html_report = report(Report.new(report_options.merge(format: :html)))
         html_report.show
 
         file = File.expand_path('../../../../reek.html', __FILE__)
