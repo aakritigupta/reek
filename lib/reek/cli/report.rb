@@ -35,9 +35,6 @@ module Reek
       end
     end
 
-    #
-    # An error raised when an unsupported report format is requested
-    #
     class UnsupportedReportFormatError < StandardError; end
 
     #
@@ -48,13 +45,15 @@ module Reek
       NoWarningsColor = :green
       WarningsColor = :red
 
-      def initialize(warning_formatter = SimpleWarningFormatter, report_formatter = ReportFormatter, format = DefaultFormat, options = {})
-        @warning_formatter   = warning_formatter
-        @report_formatter    = report_formatter
+      FORMAT_WHITELIST = [:text, :html, :yaml]
+
+      def initialize(options = {})
+        @warning_formatter   = options.fetch :warning_formatter, SimpleWarningFormatter
+        @report_formatter    = options.fetch :report_formatter, ReportFormatter
         @examiners           = []
         @total_smell_count   = 0
-        @sort_by_issue_count = options[:sort_by_issue_count] || false
-        @format              = format
+        @sort_by_issue_count = options.fetch :sort_by_issue_count, false
+        @format = options[:format] ? validate_format(options[:format]) : DefaultFormat
       end
 
       def add_examiner(examiner)
@@ -64,11 +63,7 @@ module Reek
       end
 
       def show
-        if valid_format?(@format)
-          self.send("as_#{@format}")
-        else
-          raise UnsupportedReportFormatError
-        end
+          send("as_#{@format}")
       end
 
       def has_smells?
@@ -77,8 +72,11 @@ module Reek
 
       private
 
-      def valid_format?(format)
-        [:text, :html, :yaml].include? format
+      def validate_format(format)
+        unless FORMAT_WHITELIST.include? format
+          raise UnsupportedReportFormatError
+        end
+        format
       end
 
       def as_html
@@ -100,7 +98,7 @@ module Reek
 
       def all_smells
         @all_smells ||= @examiners.each_with_object([]) { |examiner, smells| smells << examiner.smells }
-        .flatten
+                                                      .flatten
       end
 
       def sort_examiners

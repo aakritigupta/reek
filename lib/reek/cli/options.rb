@@ -118,7 +118,12 @@ EOB
       attr_reader :smells_to_detect
 
       def reporter
-        @reporter ||= @report_class.new(@warning_formatter, ReportFormatter, @format, { sort_by_issue_count: @sort_by_issue_count })
+        @reporter ||= @report_class.new( {
+          warning_formatter: @warning_formatter,
+          report_formatter: ReportFormatter,
+          format: @format,
+          sort_by_issue_count: @sort_by_issue_count
+        })
       end
 
       def get_sources
