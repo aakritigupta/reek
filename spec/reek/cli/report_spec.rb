@@ -19,11 +19,11 @@ def report_options
   {
     warning_formatter: SimpleWarningFormatter,
     report_formatter: ReportFormatter,
-    format: :text
+    strategy: ReportStrategy::Quiet
     }
 end
 
-describe QuietReport, " when empty" do
+describe TextReport, " when empty" do
   context 'empty source' do
     let(:examiner) { Examiner.new('') }
 
@@ -32,14 +32,14 @@ describe QuietReport, " when empty" do
     end
 
     it 'has an empty quiet_report' do
-      qr = QuietReport.new
-      qr.add_examiner(examiner)
-      expect(qr.gather_results).to eq([])
+      tr = TextReport.new
+      tr.add_examiner(examiner)
+      expect{tr.show}.to_not output.to_stdout
     end
 
     context 'when output format is html' do
       it 'has the text 0 total warnings' do
-        html_report = report(Report.new(report_options.merge(format: :html)))
+        html_report = report(HtmlReport.new(report_options))
         html_report.show
 
         file = File.expand_path('../../../../reek.html', __FILE__)
@@ -52,7 +52,7 @@ describe QuietReport, " when empty" do
 
     context 'when output format is yaml' do
       it 'prints empty yaml' do
-        yaml_report = report(QuietReport.new(report_options.merge(format: :yaml)))
+        yaml_report = report(YamlReport.new(report_options))
         output = capture_output_stream { yaml_report.show }
         expect(output).to match /^--- \[\]\n.*$/
       end
@@ -60,8 +60,8 @@ describe QuietReport, " when empty" do
 
     context 'when output format is text' do
       it 'prints nothing' do
-        text_report = report(QuietReport.new)
-        text_report.gather_results
+        text_report = report(TextReport.new)
+        #text_report.gather_results
         expect{text_report.show}.to_not output.to_stdout
       end
     end
@@ -70,13 +70,13 @@ describe QuietReport, " when empty" do
   context 'with a couple of smells' do
     before :each do
       @examiner = Examiner.new('def simple(a) a[3] end')
-      @rpt = QuietReport.new report_options
+      @rpt = TextReport.new report_options
     end
 
     context 'with colors disabled' do
       before :each do
         Rainbow.enabled = false
-        @result = @rpt.add_examiner(@examiner).gather_results.first
+        @result = @rpt.add_examiner(@examiner).smells.first
       end
 
       it 'has a header' do
@@ -99,7 +99,7 @@ describe QuietReport, " when empty" do
           Rainbow.enabled = true
           @rpt.add_examiner(Examiner.new('def simple() puts "a" end'))
           @rpt.add_examiner(Examiner.new('def simple() puts "a" end'))
-          @result = @rpt.gather_results
+          @result = @rpt.smells
         end
 
         it 'has a footer in color' do
@@ -113,7 +113,7 @@ describe QuietReport, " when empty" do
           Rainbow.enabled = true
           @rpt.add_examiner(Examiner.new('def simple(a) a[3] end'))
           @rpt.add_examiner(Examiner.new('def simple(a) a[3] end'))
-          @result = @rpt.gather_results
+          @result = @rpt.smells
         end
 
         it 'has a header in color' do
@@ -125,14 +125,6 @@ describe QuietReport, " when empty" do
           expect(output).to end_with "\e[31m4 total warnings\n\e[0m"
         end
       end
-    end
-  end
-
-  context 'when report format is not supported' do
-    it 'raises exception' do
-      expect{
-        QuietReport.new(report_options.merge(format: :pdf))
-      }.to raise_error Reek::Cli::UnsupportedReportFormatError
     end
   end
 end

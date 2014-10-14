@@ -18,10 +18,10 @@ module Reek
         @argv = argv
         @parser = OptionParser.new
         @colored = true
-        @report_class = QuietReport
+        @report_class = TextReport
+        @strategy = ReportStrategy::Quiet
         @warning_formatter = WarningFormatterWithLineNumbers
         @command_class = ReekCommand
-        @format = Report::DefaultFormat
         @config_files = []
         @sort_by_issue_count = false
         @smells_to_detect = []
@@ -83,10 +83,10 @@ EOB
           @colored = opt
         end
         @parser.on("-q", "--quiet", "Suppress headings for smell-free source files (this is the default)") do |opt|
-          @report_class = QuietReport
+          @strategy = ReportStrategy::Quiet
         end
         @parser.on("-V", "--no-quiet", "--verbose", "Show headings for smell-free source files") do |opt|
-          @report_class = VerboseReport
+          @strategy = ReportStrategy::Verbose
         end
         @parser.on("-n", "--no-line-numbers", "Suppress line numbers from the output") do
           @warning_formatter = SimpleWarningFormatter
@@ -101,10 +101,10 @@ EOB
           @sort_by_issue_count = true
         end
         @parser.on("-y", "--yaml", "Report smells in YAML format") do
-          @format = :yaml
+          @report_class = YamlReport
         end
         @parser.on("-H", "--html", "Report smells in HTML format") do
-          @format = :html
+          @report_class = HtmlReport
         end
       end
 
